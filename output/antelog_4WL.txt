@@ -1,0 +1,19 @@
+
+For atom[3]:O3, the best APS is not zero, bonds involved by this atom are frozen
+
+Warning: the assigned bond types may be wrong, please : 
+(1) double check the structure (the connectivity) and/or 
+(2) adjust atom valence penalty parameters in APS.DAT, and/or 
+(3) increase PSCUTOFF in define.h and recompile bondtype.c
+    Be cautious, use a large value of PSCUTOFF (>100) will significantly increase the computation time
+
+Running: /net/cci/pawelrc/amber/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
+Running: /net/cci/pawelrc/amber/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+
+Running: /net/cci/pawelrc/amber/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+Total number of electrons: 86; net charge: -1
+
+Running: /net/cci/pawelrc/amber/bin/sqm -O -i sqm.in -o sqm.out
+
+Running: /net/cci/pawelrc/amber/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /net/cci/pawelrc/amber/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+
