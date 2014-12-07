@@ -1,0 +1,90 @@
+FILELIST
+ene_final_min.dat - list of final energies from no solvent minimization
+ene_initial_min.dat - list of inital ene from no solvent min
+ene_final_min_igb.dat - list of final energies from GB minimization
+ene_initial_min_igb.dat - list of initial ene from GB min
+AmberDirectory - list of all components, NOT UP TO DATE
+missing_mol2.dat - list of components antechamber failed
+missing_min_pdb.dat - list of components sander minimization failed
+outliers_min_energy.dat - no solvent minimization outliers (gradient RMSD >1000 or |energy|>1000)
+outliers_min_igb_energy.dat - GB minimization outliers (gradient RMSD >1000 or |energy|>1000)
+
+1. Procedure
+phenix_source/elbow/elbow/generate_all_chemical_component_restraint_files.py
+run -> run_ligand_loop -> get_amber_filenames_from_directory_tree -> calculate_amber_files
+calculate_amber_files
+  builder.run
+  mol.OptimiseHydrogens
+  mol.WritePDB ->4antechamber.pdb/final.pdb
+  mol.Multiplicitise
+  antechamber first run (charge/multiplicity from elbow, bcc, gaff) ->sqm.pdb
+  antechamber second run (now using the sqm optimized geometry structure from the first run) ->mol2
+  parmchk2 (make frcmod file) ->frcmod
+
+What does builder.run do? elbow gets pdb ideal geometry - better for amber to start, matrix of bonds angles, chirals, protonation (based on 7.0 pH); deprotonates carboxylate, sulfate, protonates amine
+What is OptimiseHydrogens do?
+What does Multiplicitise do? get multiplicity
+
+2 sets - with H and without. mogul tests. neutron diffraction where not deprotonated.
+
+
+2. Quantity
+[pjanowsk@krakow AmberLibrary]$ ./get_AmberLib_statistics.py 
+Total no of *.final.pdb files (made by eLBOW): 14560
+Total no of *.mol2 files (made by antechamber): 13627
+Total no of *.mol2 files (made by prmchk2): 13627
+Total no of *.min.pdb files (made by sander): 13310
+Total no of *.min_igb.pdb files (made by sander): 13526
+
+~19000 in components.cif
+??? non-polymers 
+~1500 failed eLBOW - no metals, too long smiles
+14560 final.pdbs
+13627 mol2   (933 failed antechamber)
+13310 min.pdb  (317 failed sander)
+13526 min_igb.pdb (101 failed sander igb)
+13226 good minimizations (89 outliers) (outlier is RMSD >1000 or |energy|>1000
+13370 good igb minimizations (59 outliers)
+
+
+
+Causes of minimization failure:
+I. failed no solvent but did not fail igb
+  a.  Ewald PARAMETER RANGE CHECKING:
+      parameter a: (unit cell size)  has value  0.15778E+04
+      This is outside the legal range
+      Lower limit:  0.10000E+01 Upper limit:  0.10000E+04
+      Check ew_legal.h                                                 76  (high coordinates in mol2 file)
+  b.  Frac coord min, max: -4.7028288463886145 3.0768178613122550
+      The system has extended beyond
+       the extent of the virtual box.
+      Restarting sander will recalculate
+       a new virtual box with 30 Angstroms
+       extra on each side, if there is a
+       restart file for this configuration.
+      SANDER BOMB in subroutine Routine: map_coords (ew_force.f)
+      Atom out of bounds. If a restart has been written,
+       restarting should resolve the error                             131 
+  c. PARAMETER RANGE CHECKING:
+      parameter nfft1: (grid size)  has value     2304
+      This is outside the legal range
+      Lower limit:        6 Upper limit:     2048
+      The limits may be adjustable; search in the .h files             8 (high coords and molecule broke apart)
+  d.  compute_nfft: failed to get good fft array size  
+      x =    1627.7719999999999                                        1  (high coordinates)
+II. failed both no solvent and igb
+  a. I could not understand line     3 :
+     -604.6010000-1939.4590000-756.2940000-603.9620000-1940.0720000-757.3010000  98  (high coords and molecule broke apart)
+  b. Error opening unit    9: File "169.rst7" is missing or unreadable            3  (W2R and C4A are empty from eLBOW, 169 has high coords and broke apart)
+
+
+3. Quality
+ bad energies
+ ? bond/angle rmsd 
+ ? mogul
+
+
+?Are amines protonated?
+?How many non-polymers? 
+W2R/C4A (empty final.pdb)
+

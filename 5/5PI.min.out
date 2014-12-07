@@ -1,0 +1,105 @@
+
+          -------------------------------------------------------
+          Amber 14 SANDER                              2014
+          -------------------------------------------------------
+
+| Run on 12/05/2014 at 19:25:48
+
+|   Executable path: sander
+| Working directory: /net/casegroup2/u2/pjanowsk/Phenix/AmberLibrary/5
+|          Hostname: krakow
+
+  [-O]verwriting output
+
+File Assignments:
+|  MDIN: sander.in                                                             
+| MDOUT: 5PI.min.out                                                           
+|INPCRD: 5PI.rst7                                                              
+|  PARM: 5PI.prmtop                                                            
+|RESTRT: 5PI.min.rst7                                                          
+|  REFC: refc                                                                  
+| MDVEL: mdvel                                                                 
+| MDFRC: mdfrc                                                                 
+|  MDEN: mden                                                                  
+| MDCRD: mdcrd                                                                 
+|MDINFO: mdinfo                                                                
+|  MTMD: mtmd                                                                  
+|INPDIP: inpdip                                                                
+|RSTDIP: rstdip                                                                
+|INPTRA: inptraj                                                               
+
+
+ Here is the input file:
+
+  short minimization                                                           
+ &cntrl                                                                        
+   imin=1, maxcyc=100, ncyc=50, ntpr=1, cut=99., ntb=0,                        
+ /                                                                             
+
+--------------------------------------------------------------------------------
+   1.  RESOURCE   USE: 
+--------------------------------------------------------------------------------
+
+| Flags:                                                                        
+|    NONPERIODIC   ntb=0 and igb=0: Setting up nonperiodic simulation
+|Largest sphere to fit in unit cell has radius =   244.414
+| New format PARM file being parsed.
+| Version =    1.000 Date = 12/05/14 Time = 19:25:48
+ NATOM  =      87 NTYPES =      12 NBONH =      43 MBONA  =      37
+ NTHETH =      83 MTHETA =      42 NPHIH =     104 MPHIA  =      45
+ NHPARM =       0 NPARM  =       0 NNB   =     352 NRES   =       1
+ NBONA  =      37 NTHETA =      42 NPHIA =      45 NUMBND =      24
+ NUMANG =      48 NPTRA  =      14 NATYP =      14 NPHB   =       0
+ IFBOX  =       0 NMXRS  =      87 IFCAP =       0 NEXTRA =       0
+ NCOPY  =       0
+
+
+|     Memory Use     Allocated
+|     Real               28954
+|     Hollerith            264
+|     Integer            30055
+|     Max Pairs           3741
+|     nblistReal          1044
+|     nblist Int       1250170
+|       Total             5250 kbytes
+
+| Note: 1-4 EEL scale factors are being read from the topology file.
+
+| Note: 1-4 VDW scale factors are being read from the topology file.
+| Duplicated    0 dihedrals
+| Duplicated    0 dihedrals
+
+--------------------------------------------------------------------------------
+   2.  CONTROL  DATA  FOR  THE  RUN
+--------------------------------------------------------------------------------
+
+5PI                                                                             
+
+General flags:
+     imin    =       1, nmropt  =       0
+
+Nature and format of input:
+     ntx     =       1, irest   =       0, ntrx    =       1
+
+Nature and format of output:
+     ntxo    =       1, ntpr    =       1, ntrx    =       1, ntwr    =     500
+     iwrap   =       0, ntwx    =       0, ntwv    =       0, ntwe    =       0
+     ioutfm  =       0, ntwprt  =       0, idecomp =       0, rbornstat=      0
+
+Potential function:
+     ntf     =       1, ntb     =       0, igb     =       0, nsnb    =      25
+     ipol    =       0, gbsa    =       0, iesp    =       0
+     dielc   =   1.00000, cut     =  99.00000, intdiel =   1.00000
+
+Frozen or restrained atoms:
+     ibelly  =       0, ntr     =       0
+
+Energy minimization:
+     maxcyc  =     100, ncyc    =      50, ntmin   =       1
+     dx0     =   0.01000, drms    =   0.00010
+
+ Ewald PARAMETER RANGE CHECKING: 
+ parameter c: (unit cell size)  has value  0.13024E+04
+ This is outside the legal range
+ Lower limit:  0.10000E+01 Upper limit:  0.10000E+04
+ Check ew_legal.h
