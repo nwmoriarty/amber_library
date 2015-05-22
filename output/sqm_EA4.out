@@ -31,12 +31,27 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 49
 | QMMM: *** SCF convergence criteria ***
 | QMMM: Energy change                :  0.1D-09 kcal/mol
 | QMMM: Error matrix |FP-PF|         :  0.1D+00 au
-| QMMM: Density matrix change        :  0.1D-09
+| QMMM: Density matrix change        :  0.5D-06
 | QMMM: Maximum number of SCF cycles :     1000
 
 | QMMM: *** Diagonalization Routine Information ***
 | QMMM: Pseudo diagonalizations are allowed.
-| QMMM: Auto diagonalization routine selection is disabled.
+| QMMM: Auto diagonalization routine selection is in use.
+| QMMM:
+| QMMM: Timing diagonalization routines:
+| QMMM:                              norbs =       91
+| QMMM:    diag iterations used for timing =       15
+| QMMM:
+| QMMM:              Internal diag routine = 0.070004 seconds
+| QMMM:                 Dspev diag routine = 0.106761 seconds
+| QMMM:                Dspevd diag routine = 0.070304 seconds
+| QMMM:                Dspevx diag routine = 0.252564 seconds
+| QMMM:                 Dsyev diag routine = 0.115886 seconds
+| QMMM:                Dsyevd diag routine = 0.086622 seconds
+| QMMM:                Dsyevr diag routine = 0.085368 seconds
+| QMMM:
+| QMMM:                Pseudo diag routine = 0.042775 seconds
+| QMMM:
 | QMMM: Using internal diagonalization routine (diag_routine=1).
 
   QMMM: QM Region Cartesian Coordinates (*=link atom) 
@@ -59,32 +74,43 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 49
   QMMM:    16       16      C        3.4620   -0.0000    8.7810
   QMMM:    17       17      C        1.3110    0.0010    7.0420
   QMMM:    18       18      H        0.6760    0.0000    3.2980
-  QMMM:    19       19      H        0.2240   -0.0010    1.7730
-  QMMM:    20       20      H       -1.3760   -0.8850    1.3630
-  QMMM:    21       21      H       -0.9340    0.2040   -2.5330
-  QMMM:    22       22      H       -1.3430    0.9610   -3.6360
-  QMMM:    23       23      H       -0.2300   -0.1110   -4.4970
+  QMMM:    19       19      H        0.0730    0.4430    1.8480
+  QMMM:    20       20      H       -1.3760    0.8840    1.3630
+  QMMM:    21       21      H       -0.9340   -0.1760   -2.5340
+  QMMM:    22       22      H       -0.2300   -0.1110   -4.4970
+  QMMM:    23       23      H       -1.3430    0.9610   -3.6360
   QMMM:    24       24      H        4.1300   -0.0550    8.7510
-  QMMM:    25       25      H        4.4960   -0.6840   10.3870
-  QMMM:    26       26      H        3.6270    1.0730    9.1550
+  QMMM:    25       25      H        4.5010   -0.6870   10.3850
+  QMMM:    26       26      H        3.6260    1.0720    9.1550
   QMMM:    27       27      H        3.0560   -0.1330    8.4520
   QMMM:    28       28      H        2.2670    0.2600    7.8140
   QMMM:    29       29      H        1.7110   -0.1290    7.3660
   QMMM:    30       30      H        0.2630   -0.2250   -1.3330
-  QMMM:    31       31      H        0.7440   -0.8730   -2.4100
-  QMMM:    32       32      H        0.2150    0.1140    5.0200
-  QMMM:    33       33      H       -0.4630   -0.8850    6.2650
-  QMMM:    34       34      H        0.1040    0.4240    5.4550
-  QMMM:    35       35      N        4.5490   -0.0000    9.6580
+  QMMM:    31       31      H        0.7440    0.8960   -2.4010
+  QMMM:    32       32      H        0.2150   -0.1110    5.0200
+  QMMM:    33       33      H       -0.4650    0.8840    6.2660
+  QMMM:    34       34      H        0.1050   -0.4240    5.4540
+  QMMM:    35       35      H        0.6210    0.3740    3.2450
+  QMMM:    36       36      H        1.1600   -0.3350    3.9360
+  QMMM:    37       37      N        4.5490   -0.0000    9.6580
 
 --------------------------------------------------------------------------------
   RESULTS
 --------------------------------------------------------------------------------
 
+      iter         sqm energy              rms gradient
+      ----    -------------------    -----------------------
+xmin    10      712.8150 kcal/mol       43.8398 kcal/(mol*A)
+xmin    20      508.7830 kcal/mol       19.0225 kcal/(mol*A)
+xmin    30      461.9309 kcal/mol        3.1806 kcal/(mol*A)
+xmin    40      438.3971 kcal/mol        9.0393 kcal/(mol*A)
+xmin    50      401.6419 kcal/mol        1.4973 kcal/(mol*A)
+xmin    60      398.0265 kcal/mol        1.7176 kcal/(mol*A)
+xmin    70      395.5714 kcal/mol        0.6277 kcal/(mol*A)
 
 QMMM: ERROR!
 QMMM: Unable to achieve self consistency to the tolerances specified
 QMMM: No convergence in SCF after   1000 steps.
-QMMM: E =  -0.4371E+06 DeltaE =   0.2345E+01 DeltaP =   0.6897E-01
-QMMM: Smallest DeltaE =   0.1592E+00 DeltaP =   0.3709E-01 Step =     10
+QMMM: E =  -0.4082E+06 DeltaE =   0.8918E-01 DeltaP =   0.2450E-01
+QMMM: Smallest DeltaE =  -0.9798E-05 DeltaP =   0.1067E-02 Step =    474
 

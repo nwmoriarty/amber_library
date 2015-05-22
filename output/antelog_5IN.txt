@@ -9,7 +9,7 @@ Running: /net/cci/pawelrc/amber/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.
 Running: /net/cci/pawelrc/amber/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
 
 Running: /net/cci/pawelrc/amber/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
-Total number of electrons: 300; net charge: 0
+Total number of electrons: 300; net charge: 4
 
 Running: /net/cci/pawelrc/amber/bin/sqm -O -i sqm.in -o sqm.out
 
@@ -17,13 +17,13 @@ Running: /net/cci/pawelrc/amber/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTEC
 
 
 SECOND RUN OF 5IN\N
-Running: /net/cci/pawelrc/amber/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
-Running: /net/cci/pawelrc/amber/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+Info: the actual number of rings (2422) exceeds the defaut ring size (500), reallocate memory automatically
+For atom[9]:S9, the best APS is not zero, bonds involved by this atom are frozen
 
-Running: /net/cci/pawelrc/amber/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
-Total number of electrons: 300; net charge: 0
+For atom[17]:O17, the best APS is not zero, bonds involved by this atom are frozen
 
-Running: /net/cci/pawelrc/amber/bin/sqm -O -i sqm.in -o sqm.out
+For atom[18]:O18, the best APS is not zero, bonds involved by this atom are frozen
 
-Running: /net/cci/pawelrc/amber/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /net/cci/pawelrc/amber/dat/antechamber/BCCPARM.DAT -s 2 -j 1
-
+The frozen atom type can only be 1, 2, 3, 7 (aromatic single), 8 (aromatic double)Running: /net/cci/pawelrc/amber/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+Error: cannot run "/net/cci/pawelrc/amber/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac" in judgebondtype() of antechamber.c properly, exit
+Cannot open file 5IN.mol2 to read in rmol2(), exit

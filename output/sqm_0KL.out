@@ -32,13 +32,28 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 96
 | QMMM: *** SCF convergence criteria ***
 | QMMM: Energy change                :  0.1D-09 kcal/mol
 | QMMM: Error matrix |FP-PF|         :  0.1D+00 au
-| QMMM: Density matrix change        :  0.1D-09
+| QMMM: Density matrix change        :  0.5D-06
 | QMMM: Maximum number of SCF cycles :     1000
 
 | QMMM: *** Diagonalization Routine Information ***
 | QMMM: Pseudo diagonalizations are allowed.
-| QMMM: Auto diagonalization routine selection is disabled.
-| QMMM: Using internal diagonalization routine (diag_routine=1).
+| QMMM: Auto diagonalization routine selection is in use.
+| QMMM:
+| QMMM: Timing diagonalization routines:
+| QMMM:                              norbs =      155
+| QMMM:    diag iterations used for timing =        5
+| QMMM:
+| QMMM:              Internal diag routine = 0.096762 seconds
+| QMMM:                 Dspev diag routine = 0.139398 seconds
+| QMMM:                Dspevd diag routine = 0.083579 seconds
+| QMMM:                Dspevx diag routine = 0.300715 seconds
+| QMMM:                 Dsyev diag routine = 0.149829 seconds
+| QMMM:                Dsyevd diag routine = 0.100737 seconds
+| QMMM:                Dsyevr diag routine = 0.099224 seconds
+| QMMM:
+| QMMM:                Pseudo diag routine = 0.051070 seconds
+| QMMM:
+| QMMM: Using dspevd routine (diag_routine=3).
 
   QMMM: QM Region Cartesian Coordinates (*=link atom) 
   QMMM: QM_NO.   MM_NO.  ATOM         X         Y         Z
@@ -52,8 +67,8 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 96
   QMMM:     8        8      O        4.0280    0.5860   -2.2790
   QMMM:     9        9      O        3.3360    3.0120   -2.3760
   QMMM:    10       10      P        4.1590    3.6560   -3.6000
-  QMMM:    11       11      O        5.6100    3.5590   -3.3260
-  QMMM:    12       12      O        3.8140    2.8590   -4.9570
+  QMMM:    11       11      O        3.8140    2.8590   -4.9570
+  QMMM:    12       12      O        5.6100    3.5590   -3.3260
   QMMM:    13       13      O        3.7470    5.2040   -3.7680
   QMMM:    14       14      C        4.3790    6.0810   -4.7030
   QMMM:    15       15      C        3.7510    7.4720   -4.6030
@@ -71,29 +86,30 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 96
   QMMM:    27       27      C        6.1890   11.6780   -0.7760
   QMMM:    28       28      O        6.8650   12.2940    0.0260
   QMMM:    29       29      C        4.1400   13.0350   -0.1990
-  QMMM:    30       30      C        3.6460   13.8950    0.4300
-  QMMM:    31       31      C        2.9200   15.1010    0.9790
-  QMMM:    32       32      C        2.8360   16.1710    0.3200
-  QMMM:    33       33      C        2.9370   17.5080    1.2350
-  QMMM:    34       34      N        1.5180   17.5700    1.7620
-  QMMM:    35       35      H        3.7860    6.5510   -5.4780
-  QMMM:    36       36      H        5.2270    5.4450   -4.9310
-  QMMM:    37       37      H        2.6730    7.4080   -4.6970
-  QMMM:    38       38      H        5.3090    8.0600   -6.0010
-  QMMM:    39       39      H        4.0200    8.6570   -7.5360
-  QMMM:    40       40      H        4.4970   10.3330   -5.9160
-  QMMM:    41       41      H        5.4540    9.7380   -4.6130
-  QMMM:    42       42      H        2.8570    9.7580   -3.4970
-  QMMM:    43       43      H        7.4910   10.1150   -1.2130
-  QMMM:    44       44      H        3.0840   11.7060   -2.0850
-  QMMM:    45       45      H        3.3520   15.4030    1.9250
-  QMMM:    46       46      H        1.9030   14.7540    1.1150
-  QMMM:    47       47      H        3.6270   16.4920   -0.3460
-  QMMM:    48       48      H        1.9300   16.4310   -0.2140
-  QMMM:    49       49      H        3.5170   17.2600    2.1160
-  QMMM:    50       50      H        3.1930   18.3360    0.5860
-  QMMM:    51       51      H        1.2110   18.3630    1.2340
-  QMMM:    52       52      H        1.2570   18.1070    2.5650
+  QMMM:    30       30      C        3.6380   13.8820    0.4410
+  QMMM:    31       31      C        3.1890   15.0130    1.2350
+  QMMM:    32       32      C        4.4250   16.0400    1.4170
+  QMMM:    33       33      C        3.4840   17.0910    2.0660
+  QMMM:    34       34      N        4.6730   18.0420    2.4200
+  QMMM:    35       35      H        3.6290    6.3330   -5.4420
+  QMMM:    36       36      H        5.3750    5.8070   -5.0320
+  QMMM:    37       37      H        2.6730    7.4130   -4.6970
+  QMMM:    38       38      H        5.3110    8.0600   -5.9970
+  QMMM:    39       39      H        3.6790    8.7700   -7.6750
+  QMMM:    40       40      H        5.4320   10.1210   -4.7250
+  QMMM:    41       41      H        4.0320   10.7330   -5.2950
+  QMMM:    42       42      H        2.8560    9.7550   -3.5010
+  QMMM:    43       43      H        7.6520   10.3960   -1.2600
+  QMMM:    44       44      H        3.1600   11.7140   -2.2960
+  QMMM:    45       45      H        2.4530   14.5150    1.8530
+  QMMM:    46       46      H        2.5490   15.2790    0.4020
+  QMMM:    47       47      H        5.0140   15.6580    2.2420
+  QMMM:    48       48      H        4.8410   16.2110    0.4320
+  QMMM:    49       49      H        3.3190   17.6310    1.1420
+  QMMM:    50       50      H        2.7060   16.8850    2.7910
+  QMMM:    51       51      H        4.0950   18.6580    2.9560
+  QMMM:    52       52      H        5.2010   18.7360    1.9290
+  QMMM:    53       53      H        5.0170   17.7670    3.3190
 
 --------------------------------------------------------------------------------
   RESULTS
@@ -103,6 +119,6 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 96
 QMMM: ERROR!
 QMMM: Unable to achieve self consistency to the tolerances specified
 QMMM: No convergence in SCF after   1000 steps.
-QMMM: E =  -0.1231E+07 DeltaE =   0.1136E+02 DeltaP =   0.3787E+00
-QMMM: Smallest DeltaE =  -0.1097E+01 DeltaP =   0.3718E+00 Step =    754
+QMMM: E =  -0.1238E+07 DeltaE =  -0.1197E+02 DeltaP =   0.5690E+00
+QMMM: Smallest DeltaE =   0.4903E-01 DeltaP =   0.3086E+00 Step =    733
 

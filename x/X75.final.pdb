@@ -1,14 +1,14 @@
 REMARK  99 electronic Ligand Builder and Optimisation Workbench (eLBOW)
 REMARK  99   - a module of PHENIX
-REMARK  99   - file written: Thu Nov 20 17:56:42 2014
+REMARK  99   - file written: Fri May 22 03:19:52 2015
 REMARK  99
 REMARK  99   Final geometry file: a 88 line input string
 REMARK  99   Ligand name: 4-chloro-2-{[(6-chloropyridin-3-yl)methyl]amino}-5-nitrobenzamide
 REMARK  99   Random seed: 3628800
 REMARK  99   SMILES string: NC(=O)c1cc(c(Cl)cc1NCc2ccc(Cl)nc2)[N+]([O-])=O
-FORMUL   1  X75    C13 H10 N4 O3 CL2 
+FORMUL   1  X75    C13 H11 N4 O3 CL2  (1)
 HETATM    1  N01 X75 A   1       0.000   0.000   0.000  1.00 20.00      A    N  
-HETATM    2  N02 X75 A   1       3.119   0.119   2.792  1.00 20.00      A    N  
+HETATM    2  N02 X75 A   1       3.119   0.119   2.792  1.00 20.00      A    N+1
 HETATM    3  N03 X75 A   1      -4.211  -1.133   0.664  1.00 20.00      A    N  
 HETATM    4  N04 X75 A   1       5.338   0.007  -1.846  1.00 20.00      A    N+1
 HETATM    5  C05 X75 A   1       3.692   0.000   0.000  1.00 20.00      A    C  
@@ -28,19 +28,20 @@ HETATM   18  O19 X75 A   1       5.562   0.007  -3.044  1.00 20.00      A    O
 HETATM   19  O20 X75 A   1       6.263   0.011  -1.054  1.00 20.00      A    O-1
 HETATM   20 CL21 X75 A   1       3.221   0.001  -3.965  1.00 20.00      A   CL  
 HETATM   21 CL22 X75 A   1      -6.298  -0.139   1.957  1.00 20.00      A   CL  
-HETATM   22 HN01 X75 A   1       0.738  -0.058   0.673  1.00 20.00      A    H  
-HETATM   23 H102 X75 A   1       2.243   0.055   2.313  1.00 20.00      A    H  
-HETATM   24 H202 X75 A   1       3.874  -0.538   2.774  1.00 20.00      A    H  
-HETATM   25  H05 X75 A   1       3.566   0.359   1.014  1.00 20.00      A    H  
-HETATM   26  H08 X75 A   1       2.406   0.000  -1.108  1.00 20.00      A    H  
-HETATM   27 H112 X75 A   1      -0.275   0.070  -1.653  1.00 20.00      A    H  
+HETATM   22 HN01 X75 A   1       0.705  -0.180   0.687  1.00 20.00      A    H  
+HETATM   23 H102 X75 A   1       2.241   0.078   2.313  1.00 20.00      A    H  
+HETATM   24 H202 X75 A   1       3.766   0.872   2.918  1.00 20.00      A    H  
+HETATM   25  H05 X75 A   1       3.476   0.140   1.052  1.00 20.00      A    H  
+HETATM   26  H08 X75 A   1       2.405  -0.007  -1.108  1.00 20.00      A    H  
+HETATM   27 H112 X75 A   1      -0.276   0.067  -1.653  1.00 20.00      A    H  
 HETATM   28 H212 X75 A   1      -1.067  -0.698  -1.659  1.00 20.00      A    H  
 HETATM   29  H14 X75 A   1      -2.398  -0.399  -0.474  1.00 20.00      A    H  
 HETATM   30  H16 X75 A   1      -3.747   0.284   0.559  1.00 20.00      A    H  
 HETATM   31  H17 X75 A   1      -3.837   1.694   0.768  1.00 20.00      A    H  
-HETATM   32  C11 X75 A   1       2.102  -0.001   1.915  1.00 20.00      A    C  
+HETATM   32 H023 X75 A   1       2.290   0.431   2.326  1.00 20.00      A    H  
+HETATM   33  C11 X75 A   1       2.102  -0.001   1.915  1.00 20.00      A    C  
 CONECT    1    7   11   22
-CONECT    2   32   23   24
+CONECT    2   33   23   24   32
 CONECT    3   14
 CONECT    3   13
 CONECT    3   13
@@ -50,7 +51,7 @@ CONECT    4   18
 CONECT    5   10   25
 CONECT    5    6
 CONECT    5    6
-CONECT    6    7   32
+CONECT    6    7   33
 CONECT    6    5
 CONECT    6    5
 CONECT    7    1    6
@@ -81,8 +82,8 @@ CONECT   15   14
 CONECT   16   15   31
 CONECT   16   12
 CONECT   16   12
-CONECT   17   32
-CONECT   17   32
+CONECT   17   33
+CONECT   17   33
 CONECT   18    4
 CONECT   18    4
 CONECT   19    4
@@ -98,7 +99,8 @@ CONECT   28   11
 CONECT   29   13
 CONECT   30   15
 CONECT   31   16
-CONECT   32    2    6
-CONECT   32   17
-CONECT   32   17
+CONECT   32    2
+CONECT   33    2    6
+CONECT   33   17
+CONECT   33   17
 END

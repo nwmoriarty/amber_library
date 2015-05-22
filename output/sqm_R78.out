@@ -31,13 +31,28 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS =102
 | QMMM: *** SCF convergence criteria ***
 | QMMM: Energy change                :  0.1D-09 kcal/mol
 | QMMM: Error matrix |FP-PF|         :  0.1D+00 au
-| QMMM: Density matrix change        :  0.1D-09
+| QMMM: Density matrix change        :  0.5D-06
 | QMMM: Maximum number of SCF cycles :     1000
 
 | QMMM: *** Diagonalization Routine Information ***
 | QMMM: Pseudo diagonalizations are allowed.
-| QMMM: Auto diagonalization routine selection is disabled.
-| QMMM: Using internal diagonalization routine (diag_routine=1).
+| QMMM: Auto diagonalization routine selection is in use.
+| QMMM:
+| QMMM: Timing diagonalization routines:
+| QMMM:                              norbs =      192
+| QMMM:    diag iterations used for timing =        5
+| QMMM:
+| QMMM:              Internal diag routine = 0.174751 seconds
+| QMMM:                 Dspev diag routine = 0.214499 seconds
+| QMMM:                Dspevd diag routine = 0.149249 seconds
+| QMMM:                Dspevx diag routine = 0.514095 seconds
+| QMMM:                 Dsyev diag routine = 0.235526 seconds
+| QMMM:                Dsyevd diag routine = 0.170656 seconds
+| QMMM:                Dsyevr diag routine = 0.159715 seconds
+| QMMM:
+| QMMM:                Pseudo diag routine = 0.093265 seconds
+| QMMM:
+| QMMM: Using dspevd routine (diag_routine=3).
 
   QMMM: QM Region Cartesian Coordinates (*=link atom) 
   QMMM: QM_NO.   MM_NO.  ATOM         X         Y         Z
@@ -76,57 +91,61 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS =102
   QMMM:    33       33      N        3.3940   -0.0080    1.2740
   QMMM:    34       34      C        4.2000    0.3670    0.1100
   QMMM:    35       35      C        1.9930    0.0000    1.2110
-  QMMM:    36       36      H        1.8010   -0.3160    0.9220
-  QMMM:    37       37      H        2.1560   -0.6860    3.1200
-  QMMM:    38       38      H        0.3790   -0.3620    3.7920
+  QMMM:    36       36      H        1.8120   -0.3160    0.9150
+  QMMM:    37       37      H        2.1680   -0.5690    3.1320
+  QMMM:    38       38      H        0.3790   -0.3610    3.7910
   QMMM:    39       39      H        3.7180    0.7960    4.1150
-  QMMM:    40       40      H        3.7150    0.0560    4.6430
-  QMMM:    41       41      H        3.2400    0.2850    5.0110
-  QMMM:    42       42      H        0.9350   -0.5970    6.5670
-  QMMM:    43       43      H        1.0460   -0.4130    6.5420
-  QMMM:    44       44      H        0.5130   -0.2170    4.8910
-  QMMM:    45       45      H       -0.2910   -0.2520    5.4930
-  QMMM:    46       46      H       -4.0990   -0.2880   -0.5960
-  QMMM:    47       47      H       -1.7950    0.9100   -0.1360
-  QMMM:    48       48      H       -4.4820    1.1320   -5.1530
-  QMMM:    49       49      H       -6.3690    2.0720   -6.5440
+  QMMM:    40       40      H        3.7020    0.0770    4.6160
+  QMMM:    41       41      H        3.2400    0.2850    5.0120
+  QMMM:    42       42      H        0.9330   -0.5880    6.5430
+  QMMM:    43       43      H        1.1330   -0.3630    6.8270
+  QMMM:    44       44      H        0.5340   -0.3540    4.4590
+  QMMM:    45       45      H       -0.2910   -0.2530    5.4920
+  QMMM:    46       46      H       -4.0990   -0.2880   -0.5970
+  QMMM:    47       47      H       -1.9420    0.5860   -0.1360
+  QMMM:    48       48      H       -4.4630    1.3620   -5.1400
+  QMMM:    49       49      H       -4.6850    1.4260   -7.5880
   QMMM:    50       50      H       -4.1540    1.8100   -7.5730
-  QMMM:    51       51      H       -4.8600    1.2590   -7.7180
-  QMMM:    52       52      H       -4.8620    1.3300   -5.5640
-  QMMM:    53       53      H       -4.4440    1.2690   -8.0510
-  QMMM:    54       54      H       -3.8130    1.8460   -8.3130
-  QMMM:    55       55      H       -5.5730    2.8670   -8.9030
+  QMMM:    51       51      H       -4.7260    0.8210   -5.5920
+  QMMM:    52       52      H       -4.4450    1.2690   -8.0510
+  QMMM:    53       53      H       -3.8120    1.8480   -8.3130
+  QMMM:    54       54      H       -5.6030    2.7920   -8.9200
+  QMMM:    55       55      H       -5.3520    3.0440   -9.0230
   QMMM:    56       56      H       -5.4030    2.6520   -9.1900
-  QMMM:    57       57      H       -5.3520    3.0440   -9.0240
-  QMMM:    58       58      H       -5.7340    2.7110   -7.1380
-  QMMM:    59       59      H       -6.0710    2.4400   -7.1510
-  QMMM:    60       60      H       -5.8480   -1.3420   -0.5450
+  QMMM:    57       57      H       -6.1050    2.9040   -7.0500
+  QMMM:    58       58      H       -5.7340    2.7040   -7.1390
+  QMMM:    59       59      H       -5.8410   -1.4860   -0.6170
+  QMMM:    60       60      H       -5.6980   -1.1900   -0.4400
   QMMM:    61       61      H       -5.8830   -1.2630   -0.4890
-  QMMM:    62       62      H       -5.6980   -1.1900   -0.4400
-  QMMM:    63       63      H       -3.3910    0.3680   -1.7130
-  QMMM:    64       64      H       -1.5650    0.0740    5.0840
-  QMMM:    65       65      H       -1.7020    0.2510    5.1320
-  QMMM:    66       66      H        1.0320    0.2560    5.0700
-  QMMM:    67       67      H        0.4900    0.6170    6.0330
-  QMMM:    68       68      H        2.8300   -0.4660    5.1240
-  QMMM:    69       69      H        3.1020    0.0820    5.3060
-  QMMM:    70       70      H        3.8790    0.2200    1.1340
-  QMMM:    71       71      H        4.0220    0.3080    1.1760
-  QMMM:    72       72      H        4.3460    0.2740    1.1790
-  QMMM:    73       73      C        4.0840    0.9550    5.1220
-  QMMM:    74       74      N       -2.0680    0.0000    1.0870
-  QMMM:    75       75      C       -4.7080    0.4740   -3.8780
-  QMMM:    76       76      H       -7.2360    3.4510   -7.4160
-  QMMM:    77       77      H       -2.2600   -0.7790    1.6850
+  QMMM:    62       62      H       -3.3890    0.3640   -1.7150
+  QMMM:    63       63      H       -1.7040    0.2500    5.1340
+  QMMM:    64       64      H       -1.5660    0.0770    5.0820
+  QMMM:    65       65      H        1.0320    0.2570    5.0700
+  QMMM:    66       66      H        0.4900    0.6180    6.0320
+  QMMM:    67       67      H        2.8300   -0.4670    5.1240
+  QMMM:    68       68      H        3.1020    0.0820    5.3060
+  QMMM:    69       69      H        3.8790    0.2200    1.1340
+  QMMM:    70       70      H        4.3390    0.2850    1.1810
+  QMMM:    71       71      H        4.0190    0.2980    1.1750
+  QMMM:    72       72      C        4.0840    0.9550    5.1220
+  QMMM:    73       73      N       -2.0680    0.0000    1.0870
+  QMMM:    74       74      C       -4.7080    0.4740   -3.8780
+  QMMM:    75       75      H       -7.0380    1.7180   -7.7190
+  QMMM:    76       76      H       -2.3280    0.7280    1.7230
+  QMMM:    77       77      H       -4.1160    2.1150   -4.4480
+  QMMM:    78       78      H       -7.2330    3.4530   -7.4150
 
 --------------------------------------------------------------------------------
   RESULTS
 --------------------------------------------------------------------------------
 
+      iter         sqm energy              rms gradient
+      ----    -------------------    -----------------------
+xmin    10     1679.8004 kcal/mol       58.1762 kcal/(mol*A)
 
 QMMM: ERROR!
 QMMM: Unable to achieve self consistency to the tolerances specified
 QMMM: No convergence in SCF after   1000 steps.
-QMMM: E =  -0.1423E+07 DeltaE =   0.0000E+00 DeltaP =   0.1152E-09
-QMMM: Smallest DeltaE =  -0.2328E-09 DeltaP =   0.1152E-09 Step =    359
+QMMM: E =  -0.1386E+07 DeltaE =  -0.1921E+01 DeltaP =   0.5312E-01
+QMMM: Smallest DeltaE =  -0.1215E-01 DeltaP =   0.2928E-01 Step =      9
 
