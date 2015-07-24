@@ -1,5 +1,6 @@
 import os, sys
 import pickle
+import time
 from math import sqrt
 
 from multiprocessing import Pool
@@ -29,13 +30,8 @@ skip = {
     "T07",
     "TSD",
     ],
-  "afitt" : [
-    "1r09",
-    "1vrh",
-    "2r04",
-    "2r07",
-    ],
   }
+skip = {}
 
 def results_callback(args):
 #  print '\n\n\targs',args
@@ -61,20 +57,49 @@ def mogul_process_filename(filename):
                                         simple=False,
                                       )
   veo = validate_elbow_object(molecule)
-  print veo
   if 0 and filter(None, veo.values()):
     if os.path.exists(pf): os.remove(pf)
     return ["invalid", filename]
   #
-  if os.path.exists(pf): return ["pickle",filename]
+  if _is_newer(pf,filename):
+    if os.path.exists(pf): return ["pickle",filename]
+  # optimise H
+  format_str = "%s"
+  if 0:
+    format_str = "%s_minimized"
+    code = os.path.basename(preamble)
+    code = code.split(".")[0]
+    print 'code',code
+    mol = any_chemical_format_reader("%s.pdb" % preamble, simple=False)
+    mol.UpdateBonded()
+    for bond in mol.bonds:
+      if bond[0].isH() or bond[1].isH():
+        print bond
+        bond.mogul_value=0.98
+    print mol
+    f=file("%s.cif" % code, "wb")
+    f.write(mol.WriteCIF2String(ligand_code=code))
+    f.close()
+    print code
+    cmd = 'phenix.geometry_minimization'
+    cmd += ' selection="element H or element D"'
+    cmd += ' %s.pdb' % preamble
+    cmd += ' %s.cif' % code
+    cmd += ' output=%s_minimized' % preamble
+    print cmd
+    os.system(cmd)
   #
-  rc = mogul_utils.run_mogul(preamble,
+  t0=time.time()
+  rc = mogul_utils.run_mogul(format_str % preamble,
                              format="pdb",
                              defaults=["ON", 25, 25, 60, 25],
                              strict=False,
                              generate_hydrogens=False,
                              verbose=True,
                              )
+  print 'Mogul took %0.1fs' % (time.time()-t0)
+  if os.path.exists("%s_minimized.pdb" % preamble):
+    os.remove("%s_minimized.pdb" % preamble)
   if type(rc)==type([]):
     print "\n\tMogul doesn't appear to be installed"
     print "\nOutput from Mogul command\n"
@@ -87,9 +112,17 @@ def mogul_process_filename(filename):
   f.close()
   return ["mogul", filename]
     
-def run(only_code=None):
+def run(only_code=None,
+        cpus=1,
+        ):
+  if only_code.lower()=="none":
+    only_code=None
+  try: cpus=int(cpus)
+  except: cpus=1
 
-  cpus = 1
+  print 'only_code',only_code
+  print 'cpus',cpus
+
   pool = None
   if cpus>1:
     pool = Pool(processes=cpus)
@@ -97,10 +130,12 @@ def run(only_code=None):
   if 1:
     for d in sorted(os.listdir(os.getcwd())):
       if len(d)!=1: continue
+      if d!="0": continue
       for i, filename in enumerate(sorted(
           os.listdir(os.path.join(os.getcwd(), d)))):
         #if filename.find("min")==-1: continue
         if filename.find(".pdb")==-1: continue
+        print i, filename
         if only_code is not None and filename.find(only_code.upper())!=0:
           continue
         filename = os.path.join(os.getcwd(), d, filename)
