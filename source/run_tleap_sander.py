@@ -15,6 +15,14 @@ sander_in = """  short minimization
  /
 """
 
+def files_exist_tleap(code, igb=False):
+  for filename in ["%s.prmtop" % code,
+                   "%s.rst7" % code,
+                   ]:
+    if not os.path.exists(filename):
+      return False
+  return True
+
 def run_tleap(code, igb=False):
   inl = tleap_in.format(code)
   if igb:
@@ -31,9 +39,18 @@ def run_tleap(code, igb=False):
   for line in std.getvalue().split("\n"):
     outl += "%s\n" % line
   print outl
-  #os.remove("%s_tleap.in" % code)
+  os.remove("%s_tleap.in" % code)
   os.remove("leap.log")
   return 0
+
+def files_exist_sander(code, igb=False):
+  for filename in ["%s.min.out" % code,
+                   "%s.min.rst7" % code,
+                   ]:
+    if igb: filename = filename.replace("min", "min_igb")
+    if not os.path.exists(filename):
+      return False
+  return True
 
 def run_sander(code, igb=False):
   sin = sander_in
@@ -59,9 +76,17 @@ def run_sander(code, igb=False):
   for line in std.getvalue().split("\n"):
     outl += "%s\n" % line
   print outl
-  #os.remove("%s_sander.in" % code)
-  #os.remove("mdinfo")
+  os.remove("%s_sander.in" % code)
+  if os.path.exists("mdinfo"): os.remove("mdinfo")
   return 0
+
+def files_exist_ambpdb(code, igb=False):
+  for filename in ["%s.min.pdb" % code,
+                   ]:
+    if igb: filename = filename.replace("min", "min_igb")
+    if not os.path.exists(filename):
+      return False
+  return True
 
 def run_ambpdb(code, igb=False):
   cmd='ambpdb'
@@ -83,12 +108,21 @@ def run_ambpdb(code, igb=False):
   
 def run(only_code):
   print 'only_code',only_code
+  force=True
   os.chdir(only_code[0])
   assert os.path.exists("%s.mol2" % only_code)
   for igb in range(2):
-    run_tleap(only_code, igb=igb)
-    run_sander(only_code, igb=igb)
-    run_ambpdb(only_code, igb=igb)
+    if not files_exist_tleap(only_code, igb=igb) or force:
+      print 'run tleap',only_code,igb
+      run_tleap(only_code, igb=igb)
+      
+    if not files_exist_sander(only_code, igb=igb) or force:
+      print 'run sander',only_code,igb
+      run_sander(only_code, igb=igb)
+
+    if not files_exist_ambpdb(only_code, igb=igb) or force:
+      print 'run ambpdb',only_code,igb
+      run_ambpdb(only_code, igb=igb)
   
 if __name__=="__main__":
   run(sys.argv[1])

@@ -16,7 +16,7 @@ if [ $err -gt 0 ]; then
 	echo "error in tleap for $i"
 	exit 1
 fi
-#/bin/rm leap.in leap.log tleap.out
+/bin/rm leap.in leap.log tleap.out
 
 cat<<EOF > sander.in
   short minimization
@@ -27,7 +27,7 @@ EOF
 
 sander -O -i sander.in -p $i.prmtop -c $i.rst7 -o $i.min.out -r $i.min.rst7
 err=$?
-#/bin/rm sander.in mdinfo
+/bin/rm sander.in mdinfo
 if [ $err -gt 0 ]; then
 	echo "error in sander for $i"
 	exit 1
