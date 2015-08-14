@@ -108,7 +108,7 @@ def run_ambpdb(code, igb=False):
   
 def run(only_code):
   print 'only_code',only_code
-  force=True
+  force=False
   os.chdir(only_code[0])
   assert os.path.exists("%s.mol2" % only_code)
   for igb in range(2):
