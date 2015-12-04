@@ -5,6 +5,19 @@ import subprocess
 
 dirs = '0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t u v w x y z'.split()
 
+def check_log_for_errors(filename, igb=False):
+  if not os.path.exists(filename):
+    min_pdb_err = "does not exist %s" % filename
+  else:
+    if os.stat(filename).st_size ==0:
+      print filename
+      assert 0
+    else:
+      with open(filename) as f:
+        i=-1
+        min_pdb_err = f.readlines()[i].strip()
+  return min_pdb_err
+
 def run(only_code=None):
   subprocess.call('rm tmp*', shell=True)
   missing_mol2=open('missing_mol2.dat','w')
@@ -43,25 +56,26 @@ def run(only_code=None):
       min_pdb = code+'.min.pdb'
       if min_pdb not in min_pdbs:
         is_missing = True
-        with open('%s.min.out' %code) as f:
-          min_pdb_err = f.readlines()[-1].strip()
-      # elif os.stat(min_pdb).st_size ==0:
-      #   print min_pdb
+        min_pdb_err = check_log_for_errors("%s.min.out" % code)
 
       min_igb_pdb = code+'.min_igb.pdb'
       if min_igb_pdb not in min_igb_pdbs:
         is_missing = True
-        with open('%s.min_igb.out' %code) as f:
-          i=-1
-          lines=f.readlines()
-          while min_igb_pdb_err == '':
-            min_igb_pdb_err = lines[i].strip()
-            i-=1
-      # elif os.stat(min_igb_pdb).st_size ==0:
-      #   print min_igb_pdb
+        min_igb_pdb_err = check_log_for_errors("%s.min_igb.out" % code)
+        
+        #with open('%s.min_igb.out' %code) as f:
+        #  i=-1
+        #  lines=f.readlines()
+        #  while min_igb_pdb_err == '':
+        #    min_igb_pdb_err = lines[i].strip()
+        #    i-=1
 
       if is_missing:
-        missing_pdb.write('%s |%80s |%80s\n' %(code, min_pdb_err, min_igb_pdb_err) )
+        outl = '%s | %-80s | %-80s\n' %(code,
+                                        min_pdb_err,
+                                        min_igb_pdb_err)
+        print outl
+        missing_pdb.write(outl)
 
     print "getting %s min energies" %d
     cmd = '''

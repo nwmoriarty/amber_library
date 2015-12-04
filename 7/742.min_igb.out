@@ -3,16 +3,16 @@
           Amber 14 SANDER                              2014
           -------------------------------------------------------
 
-| Run on 07/16/2015 at 10:11:39
+| Run on 11/24/2015 at 19:30:34
 
 |   Executable path: sander
 | Working directory: /net/chevy/raid1/nigel/amber/library/amber_library/7
-|          Hostname: morse.lbl.gov
+|          Hostname: theta.lbl.gov
 
   [-O]verwriting output
 
 File Assignments:
-|  MDIN: sander.in                                                             
+|  MDIN: 742_sander.in                                                         
 | MDOUT: 742.min_igb.out                                                       
 |INPCRD: 742.rst7                                                              
 |  PARM: 742.prmtop                                                            
@@ -33,9 +33,7 @@ File Assignments:
 
   short minimization                                                           
  &cntrl                                                                        
-   imin=1, maxcyc=100, ncyc=50, ntpr=1, cut=99., ntb=0,                        
- /                                                                             
-=2                                                                             
+   imin=1, maxcyc=100, ncyc=50, ntpr=1, cut=99., ntb=0, igb=2                  
  /                                                                             
 
 --------------------------------------------------------------------------------
@@ -43,6 +41,74 @@ File Assignments:
 --------------------------------------------------------------------------------
 
 | Flags:                                                                        
-|    NONPERIODIC   ntb=0 and igb=0: Setting up nonperiodic simulation
+| New format PARM file being parsed.
+| Version =    1.000 Date = 11/24/15 Time = 16:02:47
+ NATOM  =      59 NTYPES =       8 NBONH =      34 MBONA  =      23
+ NTHETH =      78 MTHETA =      28 NPHIH =     129 MPHIA  =      38
+ NHPARM =       0 NPARM  =       0 NNB   =     316 NRES   =       1
+ NBONA  =      23 NTHETA =      28 NPHIA =      38 NUMBND =      10
+ NUMANG =      19 NPTRA  =      11 NATYP =       9 NPHB   =       0
+ IFBOX  =       0 NMXRS  =      59 IFCAP =       0 NEXTRA =       0
+ NCOPY  =       0
 
-  Error opening unit    9: File "742.rst7" is missing or unreadable                
+ Implicit solvent radii are modified Bondi radii (mbondi)                                                   
+
+|     Memory Use     Allocated
+|     Real                8229
+|     Hollerith            180
+|     Integer            22837
+|     Max Pairs              1
+|     nblistReal             0
+|     nblist Int             0
+|       Total              154 kbytes
+
+| Note: 1-4 EEL scale factors are being read from the topology file.
+
+| Note: 1-4 VDW scale factors are being read from the topology file.
+| Duplicated    0 dihedrals
+| Duplicated    0 dihedrals
+
+--------------------------------------------------------------------------------
+   2.  CONTROL  DATA  FOR  THE  RUN
+--------------------------------------------------------------------------------
+
+742                                                                             
+
+General flags:
+     imin    =       1, nmropt  =       0
+
+Nature and format of input:
+     ntx     =       1, irest   =       0, ntrx    =       1
+
+Nature and format of output:
+     ntxo    =       1, ntpr    =       1, ntrx    =       1, ntwr    =     500
+     iwrap   =       0, ntwx    =       0, ntwv    =       0, ntwe    =       0
+     ioutfm  =       0, ntwprt  =       0, idecomp =       0, rbornstat=      0
+
+Potential function:
+     ntf     =       1, ntb     =       0, igb     =       2, nsnb    =      25
+     ipol    =       0, gbsa    =       0, iesp    =       0
+     dielc   =   1.00000, cut     =  99.00000, intdiel =   1.00000
+     saltcon =   0.00000, offset  =   0.09000, gbalpha=    0.80000
+     gbbeta  =   0.00000, gbgamma =   2.90912, surften =   0.00500
+     rdt     =   0.00000, rgbmax  =  25.00000  extdiel =  78.50000
+     alpb  =        0
+
+Frozen or restrained atoms:
+     ibelly  =       0, ntr     =       0
+
+Energy minimization:
+     maxcyc  =     100, ncyc    =      50, ntmin   =       1
+     dx0     =   0.01000, drms    =   0.00010
+|  INFO: Old style inpcrd file read
+
+
+--------------------------------------------------------------------------------
+   3.  ATOMIC COORDINATES AND VELOCITIES
+--------------------------------------------------------------------------------
+
+ERROR: Problem reading coordinates or velocities from 742.rst7
+
+I could not understand line    32 :
+ -18.0190000  94.6770000   5.0300000                                                                                                                                                                                                                            
+
