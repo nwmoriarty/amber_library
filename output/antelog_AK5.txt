@@ -17,8 +17,13 @@ Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/am1bcc -i ANTECHA
 
 
 SECOND RUN OF AK5\N
-For atom[8]:O19, the best APS is not zero, bonds involved by this atom are frozen
+Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
+Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
 
-The frozen atom type can only be 1, 2, 3, 7 (aromatic single), 8 (aromatic double)Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
-Error: cannot run "/net/chevy/raid1/nigel/bootstrap/external/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac" in judgebondtype() of antechamber.c properly, exit
-Cannot open file AK5.mol2 to read in rmol2(), exit
+Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+Total number of electrons: 256; net charge: 0
+
+Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/sqm -O -i sqm.in -o sqm.out
+
+Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /net/chevy/raid1/nigel/bootstrap/external/amber14/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+

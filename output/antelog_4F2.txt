@@ -1,12 +1,25 @@
 
 Info: Bond types are assigned for valence state 34 with penalty of 4
+
+Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
 Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
 
 Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
 Total number of electrons: 222; net charge: 2
 
 Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/sqm -O -i sqm.in -o sqm.out
-Error: cannot run "/net/chevy/raid1/nigel/bootstrap/external/amber14/bin/sqm -O -i sqm.in -o sqm.out" of bcc() in charge.c properly, exit
 
-SECOND RUN OF 4F2\NCannot open the input file: sqm.pdb in rpdb(), exit
-Cannot open file 4F2.mol2 to read in rmol2(), exit
+Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /net/chevy/raid1/nigel/bootstrap/external/amber14/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+
+
+SECOND RUN OF 4F2\N
+Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
+Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+
+Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+Total number of electrons: 222; net charge: 2
+
+Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/sqm -O -i sqm.in -o sqm.out
+
+Running: /net/chevy/raid1/nigel/bootstrap/external/amber14/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /net/chevy/raid1/nigel/bootstrap/external/amber14/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+
