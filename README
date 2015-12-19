@@ -10,9 +10,16 @@ outliers_min_energy.dat - no solvent minimization outliers (gradient RMSD >1000 
 outliers_min_igb_energy.dat - GB minimization outliers (gradient RMSD >1000 or |energy|>1000)
 
 1. Procedure
-phenix_source/elbow/elbow/generate_all_chemical_component_restraint_files.py
+To create AmberLibrary, run source/master_run.sh on the CCI computers. This essentially runs four scripts:
+	elbow.generate_all_chemical_component_restraint_files.py (a copy of which is in source)
+	run_tleap_sander.py
+	run_mogul.py
+	run_validation.py
+
+What generate_all_chemical_component_restraint_files.py does:
 run -> run_ligand_loop -> get_amber_filenames_from_directory_tree -> calculate_amber_files
-calculate_amber_files
+
+Components of the "calculate_amber_files" routine:
   builder.run
   mol.OptimiseHydrogens
   mol.WritePDB ->4antechamber.pdb/final.pdb
@@ -21,11 +28,12 @@ calculate_amber_files
   antechamber second run (now using the sqm optimized geometry structure from the first run) ->mol2
   parmchk2 (make frcmod file) ->frcmod
 
-What does builder.run do? elbow gets pdb ideal geometry - better for amber to start, matrix of bonds angles, chirals, protonation (based on 7.0 pH); deprotonates carboxylate, sulfate, protonates amine
-What is OptimiseHydrogens do?
-What does Multiplicitise do? get multiplicity
+FAQ
+- What does builder.run do? elbow gets pdb ideal geometry - better for amber to start, matrix of bonds angles, chirals, protonation (based on 7.0 pH); deprotonates carboxylate, sulfate, protonates amine
+- What is OptimiseHydrogens do? optimizes 
+- What does Multiplicitise do? get multiplicity
 
-2 sets - with H and without. mogul tests. neutron diffraction where not deprotonated.
+Creates two sets - with H and without. Neutron diffraction where not deprotonated.
 
 
 2. Quantity
@@ -48,7 +56,7 @@ Total no of *.min_igb.pdb files (made by sander): 13526
 
 
 
-Causes of minimization failure:
+3. Causes of minimization failure:
 I. failed no solvent but did not fail igb
   a.  Ewald PARAMETER RANGE CHECKING:
       parameter a: (unit cell size)  has value  0.15778E+04
@@ -78,13 +86,11 @@ II. failed both no solvent and igb
   b. Error opening unit    9: File "169.rst7" is missing or unreadable            3  (W2R and C4A are empty from eLBOW, 169 has high coords and broke apart)
 
 
-3. Quality
- bad energies
+4. Quality validation...
+ ? bad energies
  ? bond/angle rmsd 
  ? mogul
 
 
-?Are amines protonated?
-?How many non-polymers? 
 W2R/C4A (empty final.pdb)
 
