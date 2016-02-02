@@ -611,7 +611,7 @@ def calculate_amber_files(code,
   try: os.remove('sqm.pdb')
   except OSError: pass
   cmd='antechamber -i 4antechamber_%s.pdb -fi pdb -o tmp.mol2 -fo mol2 \
-    -nc %d -m %d -s 2 -pf y -c bcc -at gaff' \
+    -nc %d -m %d -s 2 -pf y -c bcc -at gaff2' \
     %(code, mol.charge, mol.multiplicity)
   print cmd
   ero=easy_run.fully_buffered(cmd)
@@ -621,14 +621,14 @@ def calculate_amber_files(code,
 
   f.write('\nSECOND RUN OF %s\N' %code)
   cmd='antechamber -i sqm.pdb -fi pdb -o %s.mol2 -fo mol2 \
-    -nc %s -m %d -s 2 -pf y -c bcc -at gaff' \
+    -nc %s -m %d -s 2 -pf y -c bcc -at gaff2' \
     %(code, mol.charge, mol.multiplicity)
   print cmd
   ero=easy_run.fully_buffered(cmd)  
   ero.show_stdout(out=f)
   ero.show_stderr(out=f)
   
-  cmd='parmchk2 -i %s.mol2 -f mol2 -o %s.frcmod' %(code,code)
+  cmd='parmchk2 -i %s.mol2 -f mol2 -o %s.frcmod -s 2' %(code,code)
   ero=easy_run.fully_buffered(cmd)
   ero.show_stdout(out=f)
   ero.show_stderr(out=f)
