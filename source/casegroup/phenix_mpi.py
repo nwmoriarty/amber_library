@@ -65,4 +65,6 @@ if __name__ == '__main__':
         ligand_codes = [line.split()[-1] for line in fh.readlines()]
 
     partial_codes = get_codes_for_my_rank(ligand_codes, rank)
+
     run_each_core(partial_codes)
+
