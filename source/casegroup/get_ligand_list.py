@@ -16,5 +16,5 @@ codes = [item.split('/')[-1].split('.')[0]
          for item in glob(letter + '/*.mol2')]
 
 with open('ligand_codes.dat', 'w') as fh:
-    for code in codes:
-        fh.write(code + '\n')
+    for index, code in enumerate(codes):
+        fh.write('{index} {code} \n'.format(index=index, code=code))
