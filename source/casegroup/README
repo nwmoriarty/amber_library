@@ -2,8 +2,14 @@
 First, 
     - get mol2 files by running "submit_job.sh" file (please read ./submit_job.sh file for info)
 
-       cd ../../../
-       mkdir output/
-       sbatch amber_library/source/casegroup/submit_job.sh
+          # supposed you are in the same folder with this README file.
+          cd ../../../
+          mkdir output/
 
-    - then run tleap, then sander by: ???
+          # use slurm
+          sbatch amber_library/source/casegroup/submit_job.sh
+
+Then,
+    - get minized structures (via tleap, sander) by: master_run_tleap_sander.sh
+          
+          sh amber_library/source/casegroup/master_run_tleap_sander.sh 
