@@ -9,13 +9,18 @@
 # python source code dir
 export source=/project1/dacase-001/haichit/phenix_amber/run_amber_library/amber_library/source/
 export opwd=$PWD
-seq=`cat $source/casegroup/ligand_codes.dat`
+
+# code is in 2nd colum
+seq=`cat $source/casegroup/ligand_codes.dat | awk '{print $2}'`
 
 for code in $seq; do
     echo $code
 
     code=`elbow.python $source/casegroup/get_code.py output $code`
-    cd amber_library
-    elbow.python $source/casegroup/run_tleap_sander.py $code --force >& ../output/tleap.$code.output
-    cd $opwd
+    echo 'code = ' $code
+    if [ $code ]; then
+        cd amber_library
+        elbow.python $source/casegroup/run_tleap_sander.py $code --force >& ../output/tleap.$code.output
+        cd $opwd
+     fi
 done

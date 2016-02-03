@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os, sys
 
 def run(d,i):
@@ -24,9 +25,8 @@ def run(d,i):
         return line.split("/")[-1].replace("data_", "").replace(".cif", "").upper()
         # why not return "i"?
   else:
-    assert 0, 'no %s' % filename
-
+    # assert 0, 'no %s' % filename
+    return ''
 
 if __name__=="__main__":
-  print run(*tuple(sys.argv[1:]))
-  
+  print(run(*tuple(sys.argv[1:])))
