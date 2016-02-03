@@ -17,7 +17,6 @@ for code in $seq; do
     echo $code
 
     code=`elbow.python $source/casegroup/get_code.py output $code`
-    echo 'code = ' $code
     if [ $code ]; then
         cd amber_library
         elbow.python $source/casegroup/run_tleap_sander.py $code --force >& ../output/tleap.$code.output
