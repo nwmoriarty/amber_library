@@ -2,7 +2,7 @@ import os, sys
 import StringIO
 from libtbx import easy_run
 
-tleap_in = """source leaprc.gaff
+tleap_in = """source leaprc.gaff2
 x = loadMol2 {0}.mol2
 loadAmberParams {0}.frcmod
 saveAmberParm x {0}.prmtop {0}.rst7
@@ -113,7 +113,7 @@ def run(only_code, force=False):
   ----------
   only_code : capitalized ligand code
   force : bool, default False
-    if True, re-ru tleap and sander
+    if True, re-run tleap and sander
   '''
   print 'only_code',only_code
   os.chdir(only_code[0].lower())

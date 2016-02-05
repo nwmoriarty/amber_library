@@ -42,17 +42,17 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 84
 | QMMM:                              norbs =      151
 | QMMM:    diag iterations used for timing =        5
 | QMMM:
-| QMMM:              Internal diag routine = 0.071128 seconds
-| QMMM:                 Dspev diag routine = 0.112256 seconds
-| QMMM:                Dspevd diag routine = 0.072643 seconds
-| QMMM:                Dspevx diag routine = 0.228548 seconds
-| QMMM:                 Dsyev diag routine = 0.119719 seconds
-| QMMM:                Dsyevd diag routine = 0.080860 seconds
-| QMMM:                Dsyevr diag routine = 0.074128 seconds
+| QMMM:              Internal diag routine = 0.037591 seconds
+| QMMM:                 Dspev diag routine = 0.055305 seconds
+| QMMM:                Dspevd diag routine = 0.035083 seconds
+| QMMM:                Dspevx diag routine = 0.129314 seconds
+| QMMM:                 Dsyev diag routine = 0.059663 seconds
+| QMMM:                Dsyevd diag routine = 0.040366 seconds
+| QMMM:                Dsyevr diag routine = 0.039236 seconds
 | QMMM:
-| QMMM:                Pseudo diag routine = 0.039486 seconds
+| QMMM:                Pseudo diag routine = 0.019613 seconds
 | QMMM:
-| QMMM: Using internal diagonalization routine (diag_routine=1).
+| QMMM: Using dspevd routine (diag_routine=3).
 
   QMMM: QM Region Cartesian Coordinates (*=link atom) 
   QMMM: QM_NO.   MM_NO.  ATOM         X         Y         Z
@@ -88,25 +88,25 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 84
   QMMM:    30       30      H        2.3760   -2.7390    0.7120
   QMMM:    31       31      H        0.8640   -2.8290   -0.2030
   QMMM:    32       32      H        3.6140   -3.4040   -1.3630
-  QMMM:    33       33      H        1.3960   -5.3340   -0.5870
-  QMMM:    34       34      H        2.8710   -5.0730    0.3540
+  QMMM:    33       33      H        2.8710   -5.0730    0.3540
+  QMMM:    34       34      H        1.3960   -5.3340   -0.5870
   QMMM:    35       35      H        4.9060   -8.0740   -2.0010
   QMMM:    36       36      H        3.4310   -8.3360   -2.9410
   QMMM:    37       37      H        4.1070   -9.6820   -0.3000
   QMMM:    38       38      H        2.6310   -9.9440   -1.2400
-  QMMM:    39       39      H        5.4630  -10.5020   -2.1990
-  QMMM:    40       40      H        3.9870  -10.7640   -3.1390
+  QMMM:    39       39      H        3.9870  -10.7640   -3.1390
+  QMMM:    40       40      H        5.4630  -10.5020   -2.1990
   QMMM:    41       41      H        3.1890  -12.3720   -1.4400
   QMMM:    42       42      H        4.6630  -12.1100   -0.4980
-  QMMM:    43       43      H        6.0200  -12.9290   -2.3960
-  QMMM:    44       44      H        4.5460  -13.1910   -3.3370
+  QMMM:    43       43      H        4.5460  -13.1910   -3.3370
+  QMMM:    44       44      H        6.0200  -12.9290   -2.3960
   QMMM:    45       45      H        3.7450  -14.7990   -1.6370
   QMMM:    46       46      H        5.2200  -14.5380   -0.6960
   QMMM:    47       47      H        6.5760  -15.3580   -2.5950
   QMMM:    48       48      H        5.1010  -15.6190   -3.5360
   QMMM:    49       49      H        4.5500  -16.2560   -2.0590
   QMMM:    50       50      H        4.0590  -18.2190   -1.9210
-  QMMM:    51       51      H        5.3510  -20.0210   -2.4530
+  QMMM:    51       51      H        4.9550  -19.2490   -0.9110
   QMMM:    52       52      H        2.4630  -19.1300   -1.7410
   QMMM:    53       53      H        1.9760  -21.1980   -2.8610
   QMMM:    54       54      H        5.0470  -21.5050   -2.5240
@@ -116,10 +116,10 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 84
   QMMM:    58       58      H        4.7310  -23.3320   -4.5910
   QMMM:    59       59      H        3.5260  -24.5530   -5.0210
   QMMM:    60       60      H        5.0460  -26.3470   -4.3910
-  QMMM:    61       61      H        5.8840  -25.2670   -5.5130
-  QMMM:    62       62      H        6.2270  -25.1810   -3.7800
+  QMMM:    61       61      H        6.2270  -25.1810   -3.7800
+  QMMM:    62       62      H        5.8840  -25.2670   -5.5130
   QMMM:    63       63      H        2.5120   -3.3510   -3.1600
-  QMMM:    64       64      H        4.9550  -19.2490   -0.9110
+  QMMM:    64       64      H        5.3510  -20.0210   -2.4530
 
 --------------------------------------------------------------------------------
   RESULTS
@@ -127,16 +127,19 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 84
 
       iter         sqm energy              rms gradient
       ----    -------------------    -----------------------
-xmin    10     -352.4073 kcal/mol        3.0624 kcal/(mol*A)
-xmin    20     -376.0677 kcal/mol        0.4433 kcal/(mol*A)
-xmin    30     -376.9660 kcal/mol        0.4080 kcal/(mol*A)
-xmin    40     -377.1240 kcal/mol        0.2019 kcal/(mol*A)
-xmin    50     -377.2652 kcal/mol        0.1960 kcal/(mol*A)
-xmin    60     -377.3239 kcal/mol        0.0565 kcal/(mol*A)
+xmin    10     -356.1286 kcal/mol        1.7228 kcal/(mol*A)
+xmin    20     -376.0743 kcal/mol        0.7303 kcal/(mol*A)
+xmin    30     -376.9246 kcal/mol        0.1394 kcal/(mol*A)
+xmin    40     -377.0654 kcal/mol        0.1113 kcal/(mol*A)
+xmin    50     -377.2018 kcal/mol        0.3866 kcal/(mol*A)
+xmin    60     -377.3054 kcal/mol        0.0988 kcal/(mol*A)
+xmin    70     -377.3916 kcal/mol        0.1876 kcal/(mol*A)
+xmin    80     -377.5372 kcal/mol        0.2095 kcal/(mol*A)
+xmin    90     -377.5820 kcal/mol        0.2273 kcal/(mol*A)
 
 QMMM: ERROR!
 QMMM: Unable to achieve self consistency to the tolerances specified
 QMMM: No convergence in SCF after   1000 steps.
-QMMM: E =  -0.8721E+06 DeltaE =  -0.3855E+03 DeltaP =   0.3704E+00
-QMMM: Smallest DeltaE =  -0.6497E-02 DeltaP =   0.8931E-02 Step =     43
+QMMM: E =  -0.8665E+06 DeltaE =  -0.1471E+03 DeltaP =   0.1878E+01
+QMMM: Smallest DeltaE =   0.5783E-05 DeltaP =   0.3487E-03 Step =     89
 

@@ -11,7 +11,10 @@ export source=/project1/dacase-001/haichit/phenix_amber/run_amber_library/amber_
 export opwd=$PWD
 
 # code is in 2nd colum
-seq=`cat $source/casegroup/ligand_codes.dat | awk '{print $2}'`
+# seq=`cat $source/casegroup/ligand_codes.dat | awk '{print $2}'`
+
+# one colum
+seq=`cat output/done_codes.dat`
 
 for code in $seq; do
     echo $code

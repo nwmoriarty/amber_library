@@ -59,12 +59,11 @@ if __name__ == '__main__':
     
     cwd = os.getcwd()
     amber_library = os.path.join(cwd, 'amber_library')
-    ligand_list = amber_library + '/source/casegroup/ligand_codes.dat'
+    ligand_list = os.environ.get('LIGAND_CODES', amber_library + '/source/casegroup/ligand_codes.dat')
     
     with open(ligand_list, 'r') as fh:
         ligand_codes = [line.split()[-1] for line in fh.readlines()]
 
     partial_codes = get_codes_for_my_rank(ligand_codes, rank)
-
     run_each_core(partial_codes)
 

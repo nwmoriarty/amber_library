@@ -19,7 +19,7 @@ def check_log_for_errors(filename, igb=False):
   return min_pdb_err
 
 def run(only_code=None):
-  subprocess.call('rm tmp*', shell=True)
+  subprocess.call('rm tmp{1,2,3,4}', shell=True)
   missing_mol2=open('missing_mol2.dat','w')
   missing_pdb = open('missing_min_pdb.dat', 'w')
 
@@ -161,4 +161,5 @@ def run(only_code=None):
 
 if __name__=="__main__":
   run(*tuple(sys.argv[1:]))
+  subprocess.call('rm tmp{1,2,3,4}', shell=True)
   

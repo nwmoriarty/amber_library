@@ -611,8 +611,11 @@ def calculate_amber_files(code,
   try: os.remove('sqm.pdb')
   except OSError: pass
   cmd='antechamber -i 4antechamber_%s.pdb -fi pdb -o tmp.mol2 -fo mol2 \
-    -nc %d -m %d -s 2 -pf y -c bcc -at gaff2 -ek "maxcyc=0"' \
+    -nc %d -m %d -s 2 -pf y -c bcc -at gaff2' \
     %(code, mol.charge, mol.multiplicity)
+  # cmd='antechamber -i 4antechamber_%s.pdb -fi pdb -o tmp.mol2 -fo mol2 \
+  #   -nc %d -m %d -s 2 -pf y -c bcc -at gaff2 -ek "maxcyc=0"' \
+  #   %(code, mol.charge, mol.multiplicity)
   print cmd
   ero=easy_run.fully_buffered(cmd)
   f=open('antelog_%s.txt' % code,'wb')
@@ -621,8 +624,11 @@ def calculate_amber_files(code,
 
   f.write('\nSECOND RUN OF %s\N' %code)
   cmd='antechamber -i sqm.pdb -fi pdb -o %s.mol2 -fo mol2 \
-    -nc %s -m %d -s 2 -pf y -c bcc -at gaff2 -ek "maxcyc=0"' \
+    -nc %s -m %d -s 2 -pf y -c bcc -at gaff2' \
     %(code, mol.charge, mol.multiplicity)
+  # cmd='antechamber -i sqm.pdb -fi pdb -o %s.mol2 -fo mol2 \
+  #   -nc %s -m %d -s 2 -pf y -c bcc -at gaff2 -ek "maxcyc=0"' \
+  #   %(code, mol.charge, mol.multiplicity)
   print cmd
   ero=easy_run.fully_buffered(cmd)  
   ero.show_stdout(out=f)

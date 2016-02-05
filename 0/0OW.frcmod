@@ -2,21 +2,32 @@ Remark line goes here
 MASS
 
 BOND
+c -nz  255.50   1.546       same as  c-n4, penalty score=  0.0
+hn-nz  373.20   1.030       same as hn-n4, penalty score=  0.0
+ca-nv  417.90   1.386       same as ca-nh, penalty score=  0.0
+hn-nv  404.60   1.012       same as hn-nh, penalty score=  0.0
 
 ANGLE
-ca-c -n4   63.800     116.610   Calculated with empirical approach for ca-c-n4
+ca-c -nz   63.795     116.375   Calculated using n4- c-ca, penalty score=  0.0
+nz-c -o    69.530     118.830   same as n4-c -o , penalty score=  0.0
+c -nz-hn   44.630     111.120   same as c -n4-hn, penalty score=  0.0
+ca-ca-nv   68.290     120.950   same as ca-ca-nh, penalty score=  0.0
+ca-nv-hn   48.420     116.070   same as ca-nh-hn, penalty score=  0.0
+nb-ca-nv   72.660     116.940   same as nb-ca-nh, penalty score=  0.0
+hn-nz-hn   40.580     108.300   same as hn-n4-hn, penalty score=  0.0
+hn-nv-hn   40.070     115.120   same as hn-nh-hn, penalty score=  0.0
 
 DIHE
-ca-c -n4-hn   4    5.800       180.000          -2.000      same as X -c -na-X 
-ca-c -n4-hn   4    1.400       180.000           4.000      same as X -c -na-X , penalty score=630.0
-o -c -n4-hn   4    5.800       180.000          -2.000      same as X -c -na-X 
-o -c -n4-hn   4    1.400       180.000           4.000      same as X -c -na-X , penalty score=630.0
+ca-c -nz-hn   6    0.000       180.000           3.000      same as X -c2-n4-X , penalty score=664.0
+ca-ca-nv-hn   4    4.200       180.000           2.000      same as X -ca-nh-X , penalty score=  0.0
+o -c -nz-hn   6    0.000       180.000           3.000      same as X -c2-n4-X , penalty score=664.0
+nb-ca-nv-hn   4    4.200       180.000           2.000      same as X -ca-nh-X , penalty score=  0.0
 
 IMPROPER
-ca-n4-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)
+ca-nz-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)
 c -ca-ca-ca         1.1          180.0         2.0          Using the default value
-ca-nb-ca-nh         1.1          180.0         2.0          Using the default value
-ca-hn-nh-hn         1.1          180.0         2.0          Same as X -X -na-hn, penalty score= 41.2 (use general term))
+ca-nb-ca-nv         1.1          180.0         2.0          Using the default value
+ca-hn-nv-hn         1.1          180.0         2.0          Using the default value
 nb-nb-ca-os         1.1          180.0         2.0          Using the default value
 ca-nb-ca-os         1.1          180.0         2.0          Using the default value
 

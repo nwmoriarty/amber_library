@@ -2,27 +2,38 @@ Remark line goes here
 MASS
 
 BOND
+c -nz  255.50   1.546       same as  c-n4, penalty score=  0.0
+hn-nz  373.20   1.030       same as hn-n4, penalty score=  0.0
+cd-nv  435.20   1.373       same as cd-nh, penalty score=  0.0
+hn-nv  404.60   1.012       same as hn-nh, penalty score=  0.0
 
 ANGLE
-n -c -n4   68.737     114.010   Calculated with empirical approach for n-c-n4
+c -nz-hn   44.630     111.120   same as c -n4-hn, penalty score=  0.0
+nz-c -o    69.530     118.830   same as n4-c -o , penalty score=  0.0
+n -c -nz   68.127     114.100   Calculated using n4- c- n, penalty score=  0.0
+n -cd-nv   71.930     116.940   same as n -cd-nh, penalty score=  0.0
+cd-nv-hn   48.900     115.630   same as cd-nh-hn, penalty score=  0.0
+nc-cd-nv   72.430     120.650   same as nc-cd-nh, penalty score=  0.0
+hn-nz-hn   40.580     108.300   same as hn-n4-hn, penalty score=  0.0
+hn-nv-hn   40.070     115.120   same as hn-nh-hn, penalty score=  0.0
 
 DIHE
-o -c -n4-hn   4    5.800       180.000          -2.000      same as X -c -na-X 
-o -c -n4-hn   4    1.400       180.000           4.000      same as X -c -na-X , penalty score=630.0
+o -c -nz-hn   6    0.000       180.000           3.000      same as X -c2-n4-X , penalty score=664.0
 cc-cc-os-cc   2    2.100       180.000           2.000      same as X -c2-os-X , penalty score=232.0
-n -c -n4-hn   4    5.800       180.000          -2.000      same as X -c -na-X 
-n -c -n4-hn   4    1.400       180.000           4.000      same as X -c -na-X , penalty score=630.0
+n -c -nz-hn   6    0.000       180.000           3.000      same as X -c2-n4-X , penalty score=664.0
+n -cd-nv-hn   4    4.200       180.000           2.000      same as X -cd-nh-X , penalty score=  0.0
 cd-cc-os-cc   2    2.100       180.000           2.000      same as X -c2-os-X , penalty score=232.0
 h4-cc-os-cc   2    2.100       180.000           2.000      same as X -c2-os-X , penalty score=232.0
+nc-cd-nv-hn   4    4.200       180.000           2.000      same as X -cd-nh-X , penalty score=  0.0
 
 IMPROPER
-n -n4-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)
+n -nz-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)
 cc-nc-cc-nd         1.1          180.0         2.0          Using the default value
 c -cd-n -nd         1.1          180.0         2.0          Using the default value
-n -nc-cd-nh         1.1          180.0         2.0          Using the default value
+n -nc-cd-nv         1.1          180.0         2.0          Using the default value
 cc-cd-cc-os         1.1          180.0         2.0          Using the default value
 cd-h4-cc-os         1.1          180.0         2.0          Same as X -X -ca-ha, penalty score= 67.2 (use general term))
-cd-hn-nh-hn         1.1          180.0         2.0          Same as X -X -na-hn, penalty score= 41.2 (use general term))
+cd-hn-nv-hn         1.1          180.0         2.0          Using the default value
 cc-cd-cd-ha         1.1          180.0         2.0          Same as X -X -ca-ha, penalty score= 38.9 (use general term))
 
 NONBON
