@@ -13,7 +13,7 @@ export opwd=$PWD
 # code is in 2nd colum
 # seq=`cat $source/casegroup/ligand_codes.dat | awk '{print $2}'`
 
-# one colum
+# one column
 seq=`cat output/done_codes.dat`
 
 for code in $seq; do
