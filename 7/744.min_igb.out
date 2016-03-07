@@ -3,16 +3,16 @@
           Amber 14 SANDER                              2014
           -------------------------------------------------------
 
-| Run on 07/16/2015 at 10:11:13
+| Run on 02/05/2016 at 16:34:11
 
 |   Executable path: sander
-| Working directory: /net/chevy/raid1/nigel/amber/library/amber_library/7
-|          Hostname: morse.lbl.gov
+| Working directory: /gpfs/gpfs/project1/dacase-001/haichit/phenix_amber/run_amber_library/amber_library/7
+|          Hostname: elf-login3
 
   [-O]verwriting output
 
 File Assignments:
-|  MDIN: sander.in                                                             
+|  MDIN: 744_sander.in                                                         
 | MDOUT: 744.min_igb.out                                                       
 |INPCRD: 744.rst7                                                              
 |  PARM: 744.prmtop                                                            
@@ -33,7 +33,7 @@ File Assignments:
 
   short minimization                                                           
  &cntrl                                                                        
-   imin=1, maxcyc=100, ncyc=50, ntpr=1, cut=99., ntb=0,                        
+   imin=1, maxcyc=100, ncyc=50, ntpr=1, cut=99., ntb=0, igb=2                  
  /                                                                             
 
 --------------------------------------------------------------------------------
@@ -41,28 +41,26 @@ File Assignments:
 --------------------------------------------------------------------------------
 
 | Flags:                                                                        
-|    NONPERIODIC   ntb=0 and igb=0: Setting up nonperiodic simulation
-|  *** cutoff > system size, list only builds once
-|Largest sphere to fit in unit cell has radius =    33.763
 | New format PARM file being parsed.
-| Version =    1.000 Date = 07/16/15 Time = 10:11:10
- NATOM  =      46 NTYPES =       9 NBONH =      23 MBONA  =      25
- NTHETH =      55 MTHETA =      35 NPHIH =     101 MPHIA  =      74
+| Version =    1.000 Date = 02/05/16 Time = 16:34:11
+ NATOM  =      46 NTYPES =      10 NBONH =      23 MBONA  =      25
+ NTHETH =      55 MTHETA =      35 NPHIH =     104 MPHIA  =      77
  NHPARM =       0 NPARM  =       0 NNB   =     272 NRES   =       1
- NBONA  =      25 NTHETA =      35 NPHIA =      74 NUMBND =      13
- NUMANG =      23 NPTRA  =      21 NATYP =      10 NPHB   =       0
+ NBONA  =      25 NTHETA =      35 NPHIA =      77 NUMBND =      14
+ NUMANG =      25 NPTRA  =      22 NATYP =      11 NPHB   =       0
  IFBOX  =       0 NMXRS  =      46 IFCAP =       0 NEXTRA =       0
  NCOPY  =       0
 
+ Implicit solvent radii are H(N)-modified Bondi radii (mbondi2)                                             
 
 |     Memory Use     Allocated
-|     Real                7965
+|     Real                7182
 |     Hollerith            141
-|     Integer            29909
-|     Max Pairs           1035
-|     nblistReal           552
-|     nblist Int       1109655
-|       Total             4522 kbytes
+|     Integer            22616
+|     Max Pairs              1
+|     nblistReal             0
+|     nblist Int             0
+|       Total              145 kbytes
 
 | Note: 1-4 EEL scale factors are being read from the topology file.
 
@@ -83,14 +81,18 @@ Nature and format of input:
      ntx     =       1, irest   =       0, ntrx    =       1
 
 Nature and format of output:
-     ntxo    =       1, ntpr    =       1, ntrx    =       1, ntwr    =     500
+     ntxo    =       1, ntpr    =       1, ntrx    =       1, ntwr    =       1
      iwrap   =       0, ntwx    =       0, ntwv    =       0, ntwe    =       0
      ioutfm  =       0, ntwprt  =       0, idecomp =       0, rbornstat=      0
 
 Potential function:
-     ntf     =       1, ntb     =       0, igb     =       0, nsnb    =      25
+     ntf     =       1, ntb     =       0, igb     =       2, nsnb    =      25
      ipol    =       0, gbsa    =       0, iesp    =       0
      dielc   =   1.00000, cut     =  99.00000, intdiel =   1.00000
+     saltcon =   0.00000, offset  =   0.09000, gbalpha=    0.80000
+     gbbeta  =   0.00000, gbgamma =   2.90912, surften =   0.00500
+     rdt     =   0.00000, rgbmax  =  25.00000  extdiel =  78.50000
+     alpb  =        0
 
 Frozen or restrained atoms:
      ibelly  =       0, ntr     =       0
@@ -110,820 +112,810 @@ Energy minimization:
 
  Number of triangulated 3-point waters found:        0
 
-     Sum of charges from parm topology file =   0.00299900
-     Forcing neutrality...
-
 --------------------------------------------------------------------------------
    4.  RESULTS
 --------------------------------------------------------------------------------
 
- ---------------------------------------------------
 
-     eedmeth=4: Setting switch to one everywhere
 
- ---------------------------------------------------
-| Local SIZE OF NONBOND LIST =        770
-| TOTAL SIZE OF NONBOND LIST =        770
-
-
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-      1      -2.2999E+01     1.7861E+01     6.0301E+01     N13        13
+      1      -4.6670E+01     1.4165E+01     3.3874E+01     C23        18
 
- BOND    =       11.9453  ANGLE   =        6.8016  DIHED      =       16.2434
- VDWAALS =        1.8999  EEL     =      -16.0420  HBOND      =        0.0000
- 1-4 VDW =       10.9755  1-4 EEL =      -54.8229  RESTRAINT  =        0.0000
+ BOND    =        7.6877  ANGLE   =        6.5720  DIHED      =       18.8212
+ VDWAALS =        2.3038  EEL     =      -16.0088  EGB        =      -20.6225
+ 1-4 VDW =        9.4025  1-4 EEL =      -54.8259  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-      2      -2.5368E+01     1.5768E+01     5.1261E+01     N13        13
+      2      -4.8528E+01     1.2224E+01     2.8862E+01     C23        18
 
- BOND    =        9.8964  ANGLE   =        6.6210  DIHED      =       16.2229
- VDWAALS =        1.8333  EEL     =      -15.9741  HBOND      =        0.0000
- 1-4 VDW =       10.9556  1-4 EEL =      -54.9232  RESTRAINT  =        0.0000
+ BOND    =        6.0577  ANGLE   =        6.4545  DIHED      =       18.8026
+ VDWAALS =        2.2098  EEL     =      -15.9390  EGB        =      -20.5738
+ 1-4 VDW =        9.3634  1-4 EEL =      -54.9034  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-      3      -2.7829E+01     1.3365E+01     4.0930E+01     N13        13
+      3      -5.0407E+01     1.0030E+01     2.4440E+01     H16        43
 
- BOND    =        7.7665  ANGLE   =        6.4658  DIHED      =       16.1964
- VDWAALS =        1.7475  EEL     =      -15.8953  HBOND      =        0.0000
- 1-4 VDW =       10.9333  1-4 EEL =      -55.0435  RESTRAINT  =        0.0000
+ BOND    =        4.4118  ANGLE   =        6.3727  DIHED      =       18.7780
+ VDWAALS =        2.0880  EEL     =      -15.8569  EGB        =      -20.5209
+ 1-4 VDW =        9.3161  1-4 EEL =      -54.9954  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-      4      -3.0263E+01     1.0674E+01     2.9447E+01     N13        13
+      4      -5.2192E+01     7.6455E+00     2.1636E+01     H16        43
 
- BOND    =        5.6708  ANGLE   =        6.3562  DIHED      =       16.1611
- VDWAALS =        1.6341  EEL     =      -15.8054  HBOND      =        0.0000
- 1-4 VDW =       10.9081  1-4 EEL =      -55.1874  RESTRAINT  =        0.0000
+ BOND    =        2.8692  ANGLE   =        6.3440  DIHED      =       18.7443
+ VDWAALS =        1.9252  EEL     =      -15.7617  EGB        =      -20.4672
+ 1-4 VDW =        9.2581  1-4 EEL =      -55.1039  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-      5      -3.2499E+01     7.8171E+00     2.3079E+01     N11        11
+      5      -5.3744E+01     5.2855E+00     1.8232E+01     H16        43
 
- BOND    =        3.7874  ANGLE   =        6.3096  DIHED      =       16.1123
- VDWAALS =        1.4780  EEL     =      -15.7063  HBOND      =        0.0000
- 1-4 VDW =       10.8795  1-4 EEL =      -55.3590  RESTRAINT  =        0.0000
+ BOND    =        1.6067  ANGLE   =        6.3746  DIHED      =       18.6963
+ VDWAALS =        1.6973  EEL     =      -15.6539  EGB        =      -20.4211
+ 1-4 VDW =        9.1857  1-4 EEL =      -55.2298  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-      6      -3.4352E+01     5.1551E+00     1.7023E+01     H16        43
+      6      -5.4969E+01     3.4765E+00     1.4100E+01     H16        43
 
- BOND    =        2.3522  ANGLE   =        6.3224  DIHED      =       16.0413
- VDWAALS =        1.2508  EEL     =      -15.6053  HBOND      =        0.0000
- 1-4 VDW =       10.8469  1-4 EEL =      -55.5603  RESTRAINT  =        0.0000
+ BOND    =        0.8310  ANGLE   =        6.4279  DIHED      =       18.6260
+ VDWAALS =        1.3602  EEL     =      -15.5384  EGB        =      -20.4015
+ 1-4 VDW =        9.0952  1-4 EEL =      -55.3699  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-      7      -3.5762E+01     3.3549E+00     1.3356E+01     H16        43
+      7      -5.5979E+01     2.5521E+00     9.8042E+00     H82        29
 
- BOND    =        1.5455  ANGLE   =        6.3430  DIHED      =       15.9361
- VDWAALS =        0.9021  EEL     =      -15.5202  HBOND      =        0.0000
- 1-4 VDW =       10.8152  1-4 EEL =      -55.7834  RESTRAINT  =        0.0000
+ BOND    =        0.5641  ANGLE   =        6.4167  DIHED      =       18.5351
+ VDWAALS =        0.8716  EEL     =      -15.4251  EGB        =      -20.4319
+ 1-4 VDW =        9.0010  1-4 EEL =      -55.5104  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-      8      -3.6900E+01     2.2329E+00     8.2587E+00     H16        43
+      8      -5.6870E+01     1.8887E+00     7.9065E+00     H82        29
 
- BOND    =        1.1190  ANGLE   =        6.3933  DIHED      =       15.8087
- VDWAALS =        0.4076  EEL     =      -15.4536  HBOND      =        0.0000
- 1-4 VDW =       10.8271  1-4 EEL =      -56.0026  RESTRAINT  =        0.0000
+ BOND    =        0.4172  ANGLE   =        6.4225  DIHED      =       18.4652
+ VDWAALS =        0.2999  EEL     =      -15.2766  EGB        =      -20.4670
+ 1-4 VDW =        8.9350  1-4 EEL =      -55.6666  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-      9      -3.7677E+01     1.7668E+00     5.5614E+00     C7          7
+      9      -5.7510E+01     2.4976E+00     1.0769E+01     C15        16
 
- BOND    =        0.8081  ANGLE   =        6.6397  DIHED      =       15.7132
- VDWAALS =       -0.1821  EEL     =      -15.2981  HBOND      =        0.0000
- 1-4 VDW =       10.9291  1-4 EEL =      -56.2873  RESTRAINT  =        0.0000
+ BOND    =        0.5609  ANGLE   =        6.5770  DIHED      =       18.4212
+ VDWAALS =       -0.2778  EEL     =      -15.1478  EGB        =      -20.6169
+ 1-4 VDW =        8.7420  1-4 EEL =      -55.7688  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     10      -3.6733E+01     7.6531E+00     3.3540E+01     C15        16
+     10      -5.6095E+01     9.2843E+00     4.2394E+01     C15        16
 
- BOND    =        1.9625  ANGLE   =        7.2146  DIHED      =       15.6413
- VDWAALS =       -0.6119  EEL     =      -15.4857  HBOND      =        0.0000
- 1-4 VDW =       10.6991  1-4 EEL =      -56.1528  RESTRAINT  =        0.0000
+ BOND    =        1.7263  ANGLE   =        6.9168  DIHED      =       18.4218
+ VDWAALS =       -0.5966  EEL     =      -14.8487  EGB        =      -20.3688
+ 1-4 VDW =        8.6961  1-4 EEL =      -56.0423  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     11      -3.8099E+01     1.6503E+00     7.1308E+00     C7          7
+     11      -5.7884E+01     2.6975E+00     9.9550E+00     C20        17
 
- BOND    =        0.9259  ANGLE   =        6.8270  DIHED      =       15.6507
- VDWAALS =       -0.6501  EEL     =      -15.2616  HBOND      =        0.0000
- 1-4 VDW =       10.7824  1-4 EEL =      -56.3736  RESTRAINT  =        0.0000
+ BOND    =        0.5085  ANGLE   =        6.6085  DIHED      =       18.4147
+ VDWAALS =       -0.6190  EEL     =      -14.9462  EGB        =      -20.5568
+ 1-4 VDW =        8.6375  1-4 EEL =      -55.9309  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     12      -3.7746E+01     4.6671E+00     2.3025E+01     N11        11
+     12      -5.7669E+01     4.8913E+00     2.3137E+01     C15        16
 
- BOND    =        1.1822  ANGLE   =        6.9429  DIHED      =       15.6590
- VDWAALS =       -0.8023  EEL     =      -15.0159  HBOND      =        0.0000
- 1-4 VDW =       10.8924  1-4 EEL =      -56.6043  RESTRAINT  =        0.0000
+ BOND    =        0.9483  ANGLE   =        6.8380  DIHED      =       18.4096
+ VDWAALS =       -0.7257  EEL     =      -15.0242  EGB        =      -20.7973
+ 1-4 VDW =        8.5122  1-4 EEL =      -55.8298  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     13      -3.8273E+01     1.2999E+00     5.4446E+00     N11        11
+     13      -5.8200E+01     1.2730E+00     4.1479E+00     C15        16
 
- BOND    =        0.8254  ANGLE   =        6.8802  DIHED      =       15.6492
- VDWAALS =       -0.8109  EEL     =      -15.1351  HBOND      =        0.0000
- 1-4 VDW =       10.8033  1-4 EEL =      -56.4855  RESTRAINT  =        0.0000
+ BOND    =        0.5189  ANGLE   =        6.6639  DIHED      =       18.4133
+ VDWAALS =       -0.7605  EEL     =      -14.9464  EGB        =      -20.6887
+ 1-4 VDW =        8.5094  1-4 EEL =      -55.9095  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     14      -3.8244E+01     2.4204E+00     1.2454E+01     C7          7
+     14      -5.8267E+01     2.3119E+00     8.8058E+00     C15        16
 
- BOND    =        1.0437  ANGLE   =        6.9286  DIHED      =       15.6302
- VDWAALS =       -0.8801  EEL     =      -15.2109  HBOND      =        0.0000
- 1-4 VDW =       10.6606  1-4 EEL =      -56.4161  RESTRAINT  =        0.0000
+ BOND    =        0.5616  ANGLE   =        6.6536  DIHED      =       18.4148
+ VDWAALS =       -0.8957  EEL     =      -14.8364  EGB        =      -20.6234
+ 1-4 VDW =        8.4604  1-4 EEL =      -56.0020  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     15      -3.8399E+01     7.1204E-01     2.1162E+00     H81        28
+     15      -5.8225E+01     3.3680E+00     1.5717E+01     C15        16
 
- BOND    =        0.9241  ANGLE   =        6.8789  DIHED      =       15.6342
- VDWAALS =       -0.9051  EEL     =      -15.1303  HBOND      =        0.0000
- 1-4 VDW =       10.6957  1-4 EEL =      -56.4966  RESTRAINT  =        0.0000
+ BOND    =        0.7397  ANGLE   =        6.8379  DIHED      =       18.4130
+ VDWAALS =       -0.9602  EEL     =      -14.9008  EGB        =      -20.8184
+ 1-4 VDW =        8.3840  1-4 EEL =      -55.9202  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     16      -3.8459E+01     8.8607E-01     3.6580E+00     N11        11
+     16      -5.8483E+01     9.2937E-01     3.1929E+00     H82        29
 
- BOND    =        0.8863  ANGLE   =        6.9220  DIHED      =       15.6371
- VDWAALS =       -0.9813  EEL     =      -15.0761  HBOND      =        0.0000
- 1-4 VDW =       10.6977  1-4 EEL =      -56.5447  RESTRAINT  =        0.0000
+ BOND    =        0.5469  ANGLE   =        6.7178  DIHED      =       18.4170
+ VDWAALS =       -0.9877  EEL     =      -14.8436  EGB        =      -20.7339
+ 1-4 VDW =        8.3786  1-4 EEL =      -55.9785  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     17      -3.8470E+01     1.5983E+00     8.3459E+00     C7          7
+     17      -5.8575E+01     1.3274E+00     4.6428E+00     O14        14
 
- BOND    =        1.0237  ANGLE   =        6.9408  DIHED      =       15.6249
- VDWAALS =       -1.0385  EEL     =      -15.1134  HBOND      =        0.0000
- 1-4 VDW =       10.6044  1-4 EEL =      -56.5121  RESTRAINT  =        0.0000
+ BOND    =        0.5749  ANGLE   =        6.7023  DIHED      =       18.4202
+ VDWAALS =       -1.0894  EEL     =      -14.7694  EGB        =      -20.7041
+ 1-4 VDW =        8.3279  1-4 EEL =      -56.0378  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     18      -3.8468E+01     2.0244E+00     1.1228E+01     N11        11
+     18      -5.8566E+01     2.4424E+00     1.1631E+01     C12        12
 
- BOND    =        0.9948  ANGLE   =        6.9515  DIHED      =       15.6325
- VDWAALS =       -1.0836  EEL     =      -14.9847  HBOND      =        0.0000
- 1-4 VDW =       10.6558  1-4 EEL =      -56.6344  RESTRAINT  =        0.0000
+ BOND    =        0.6866  ANGLE   =        6.8597  DIHED      =       18.4211
+ VDWAALS =       -1.1559  EEL     =      -14.8007  EGB        =      -20.8485
+ 1-4 VDW =        8.2623  1-4 EEL =      -55.9905  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     19      -3.8576E+01     5.4944E-01     1.6175E+00     H82        29
+     19      -5.8705E+01     8.0096E-01     2.6147E+00     H82        29
 
- BOND    =        0.9433  ANGLE   =        6.9436  DIHED      =       15.6305
- VDWAALS =       -1.0931  EEL     =      -15.0387  HBOND      =        0.0000
- 1-4 VDW =       10.6206  1-4 EEL =      -56.5824  RESTRAINT  =        0.0000
+ BOND    =        0.5943  ANGLE   =        6.7674  DIHED      =       18.4246
+ VDWAALS =       -1.1779  EEL     =      -14.7573  EGB        =      -20.7812
+ 1-4 VDW =        8.2591  1-4 EEL =      -56.0340  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     20      -3.8625E+01     6.8668E-01     2.7789E+00     C7          7
+     20      -5.8773E+01     9.5587E-01     3.4801E+00     O14        14
 
- BOND    =        0.9822  ANGLE   =        6.9665  DIHED      =       15.6253
- VDWAALS =       -1.1518  EEL     =      -15.0314  HBOND      =        0.0000
- 1-4 VDW =       10.5726  1-4 EEL =      -56.5881  RESTRAINT  =        0.0000
+ BOND    =        0.6127  ANGLE   =        6.7490  DIHED      =       18.4282
+ VDWAALS =       -1.2458  EEL     =      -14.7051  EGB        =      -20.7604
+ 1-4 VDW =        8.2243  1-4 EEL =      -56.0754  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     21      -3.8632E+01     1.4078E+00     7.5868E+00     N11        11
+     21      -5.8808E+01     1.5452E+00     7.7831E+00     C12        12
 
- BOND    =        1.0136  ANGLE   =        6.9613  DIHED      =       15.6325
- VDWAALS =       -1.2033  EEL     =      -14.9458  HBOND      =        0.0000
- 1-4 VDW =       10.5827  1-4 EEL =      -56.6732  RESTRAINT  =        0.0000
+ BOND    =        0.6604  ANGLE   =        6.8545  DIHED      =       18.4303
+ VDWAALS =       -1.3019  EEL     =      -14.7180  EGB        =      -20.8570
+ 1-4 VDW =        8.1731  1-4 EEL =      -56.0491  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     22      -3.8629E+01     1.7902E+00     9.6342E+00     C7          7
+     22      -5.8818E+01     2.0158E+00     8.3123E+00     C12        12
 
- BOND    =        1.0268  ANGLE   =        7.0449  DIHED      =       15.6239
- VDWAALS =       -1.2307  EEL     =      -15.0422  HBOND      =        0.0000
- 1-4 VDW =       10.5187  1-4 EEL =      -56.5704  RESTRAINT  =        0.0000
+ BOND    =        0.7033  ANGLE   =        6.7363  DIHED      =       18.4378
+ VDWAALS =       -1.3504  EEL     =      -14.6376  EGB        =      -20.7434
+ 1-4 VDW =        8.1631  1-4 EEL =      -56.1273  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     23      -3.8711E+01     4.9392E-01     1.4627E+00     H82        29
+     23      -5.8825E+01     2.3749E+00     1.1822E+01     C12        12
 
- BOND    =        1.0020  ANGLE   =        6.9826  DIHED      =       15.6267
- VDWAALS =       -1.2406  EEL     =      -14.9778  HBOND      =        0.0000
- 1-4 VDW =       10.5352  1-4 EEL =      -56.6394  RESTRAINT  =        0.0000
+ BOND    =        0.7322  ANGLE   =        6.9237  DIHED      =       18.4333
+ VDWAALS =       -1.3799  EEL     =      -14.6884  EGB        =      -20.9066
+ 1-4 VDW =        8.1223  1-4 EEL =      -56.0617  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     24      -3.8745E+01     6.9747E-01     3.0182E+00     N11        11
+     24      -5.8801E+01     2.9296E+00     1.2324E+01     C12        12
 
- BOND    =        0.9959  ANGLE   =        7.0024  DIHED      =       15.6292
- VDWAALS =       -1.2850  EEL     =      -14.9424  HBOND      =        0.0000
- 1-4 VDW =       10.5220  1-4 EEL =      -56.6669  RESTRAINT  =        0.0000
+ BOND    =        0.8092  ANGLE   =        6.7394  DIHED      =       18.4458
+ VDWAALS =       -1.4229  EEL     =      -14.5951  EGB        =      -20.7366
+ 1-4 VDW =        8.1177  1-4 EEL =      -56.1587  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     25      -3.8743E+01     1.3704E+00     6.1283E+00     N11        11
+     25      -5.8995E+01     6.7165E-01     2.2548E+00     O14        14
 
- BOND    =        1.0834  ANGLE   =        6.9985  DIHED      =       15.6277
- VDWAALS =       -1.3179  EEL     =      -14.9580  HBOND      =        0.0000
- 1-4 VDW =       10.4911  1-4 EEL =      -56.6677  RESTRAINT  =        0.0000
+ BOND    =        0.6648  ANGLE   =        6.8063  DIHED      =       18.4420
+ VDWAALS =       -1.4337  EEL     =      -14.6241  EGB        =      -20.8286
+ 1-4 VDW =        8.1004  1-4 EEL =      -56.1216  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     26      -3.8791E+01     4.6687E-01     1.3846E+00     H82        29
+     26      -5.9056E+01     1.1066E+00     5.7668E+00     C12        12
 
- BOND    =        1.0212  ANGLE   =        7.0074  DIHED      =       15.6275
- VDWAALS =       -1.3275  EEL     =      -14.9367  HBOND      =        0.0000
- 1-4 VDW =       10.4914  1-4 EEL =      -56.6740  RESTRAINT  =        0.0000
+ BOND    =        0.6946  ANGLE   =        6.8812  DIHED      =       18.4458
+ VDWAALS =       -1.5021  EEL     =      -14.6099  EGB        =      -20.8956
+ 1-4 VDW =        8.0493  1-4 EEL =      -56.1195  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     27      -3.8815E+01     5.4542E-01     2.0760E+00     N11        11
+     27      -5.9014E+01     2.3563E+00     1.0849E+01     C12        12
 
- BOND    =        1.0248  ANGLE   =        7.0099  DIHED      =       15.6305
- VDWAALS =       -1.3559  EEL     =      -14.9075  HBOND      =        0.0000
- 1-4 VDW =       10.4864  1-4 EEL =      -56.7031  RESTRAINT  =        0.0000
+ BOND    =        0.8010  ANGLE   =        6.7621  DIHED      =       18.4565
+ VDWAALS =       -1.5556  EEL     =      -14.5338  EGB        =      -20.7862
+ 1-4 VDW =        8.0348  1-4 EEL =      -56.1925  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     28      -3.8831E+01     8.1448E-01     4.0075E+00     C7          7
+     28      -5.9137E+01     7.1957E-01     2.8395E+00     O14        14
 
- BOND    =        1.0380  ANGLE   =        7.0332  DIHED      =       15.6284
- VDWAALS =       -1.3853  EEL     =      -14.9247  HBOND      =        0.0000
- 1-4 VDW =       10.4575  1-4 EEL =      -56.6785  RESTRAINT  =        0.0000
+ BOND    =        0.7055  ANGLE   =        6.8257  DIHED      =       18.4538
+ VDWAALS =       -1.5631  EEL     =      -14.5562  EGB        =      -20.8584
+ 1-4 VDW =        8.0203  1-4 EEL =      -56.1642  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     29      -3.8837E+01     1.1301E+00     5.5319E+00     C7          7
+     29      -5.9168E+01     1.0880E+00     5.7784E+00     C12        12
 
- BOND    =        1.0672  ANGLE   =        7.0104  DIHED      =       15.6323
- VDWAALS =       -1.4049  EEL     =      -14.8598  HBOND      =        0.0000
- 1-4 VDW =       10.4719  1-4 EEL =      -56.7541  RESTRAINT  =        0.0000
+ BOND    =        0.7211  ANGLE   =        6.9029  DIHED      =       18.4551
+ VDWAALS =       -1.6009  EEL     =      -14.5599  EGB        =      -20.9248
+ 1-4 VDW =        7.9879  1-4 EEL =      -56.1490  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     30      -3.8840E+01     1.3991E+00     7.2449E+00     C7          7
+     30      -5.9177E+01     1.5231E+00     6.4749E+00     C12        12
 
- BOND    =        1.0455  ANGLE   =        7.0690  DIHED      =       15.6299
- VDWAALS =       -1.4260  EEL     =      -14.9232  HBOND      =        0.0000
- 1-4 VDW =       10.4302  1-4 EEL =      -56.6649  RESTRAINT  =        0.0000
+ BOND    =        0.7647  ANGLE   =        6.8016  DIHED      =       18.4631
+ VDWAALS =       -1.6362  EEL     =      -14.5058  EGB        =      -20.8431
+ 1-4 VDW =        7.9799  1-4 EEL =      -56.2015  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     31      -3.8828E+01     1.8242E+00     8.0365E+00     C7          7
+     31      -5.9189E+01     1.7550E+00     9.4113E+00     C12        12
 
- BOND    =        1.1396  ANGLE   =        7.0008  DIHED      =       15.6339
- VDWAALS =       -1.4395  EEL     =      -14.8284  HBOND      =        0.0000
- 1-4 VDW =       10.4661  1-4 EEL =      -56.8001  RESTRAINT  =        0.0000
+ BOND    =        0.7622  ANGLE   =        6.9548  DIHED      =       18.4593
+ VDWAALS =       -1.6567  EEL     =      -14.5379  EGB        =      -20.9663
+ 1-4 VDW =        7.9524  1-4 EEL =      -56.1573  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     32      -3.8902E+01     4.4465E-01     1.5348E+00     N11        11
+     32      -5.9181E+01     2.1928E+00     9.8276E+00     C12        12
 
- BOND    =        1.0435  ANGLE   =        7.0310  DIHED      =       15.6323
- VDWAALS =       -1.4476  EEL     =      -14.8642  HBOND      =        0.0000
- 1-4 VDW =       10.4399  1-4 EEL =      -56.7367  RESTRAINT  =        0.0000
+ BOND    =        0.8289  ANGLE   =        6.7923  DIHED      =       18.4700
+ VDWAALS =       -1.6876  EEL     =      -14.4738  EGB        =      -20.8367
+ 1-4 VDW =        7.9497  1-4 EEL =      -56.2234  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     33      -3.8921E+01     7.4131E-01     3.9012E+00     C7          7
+     33      -5.9290E+01     5.6560E-01     1.9704E+00     O14        14
 
- BOND    =        1.0585  ANGLE   =        7.0474  DIHED      =       15.6338
- VDWAALS =       -1.4797  EEL     =      -14.8782  HBOND      =        0.0000
- 1-4 VDW =       10.4188  1-4 EEL =      -56.7220  RESTRAINT  =        0.0000
+ BOND    =        0.7380  ANGLE   =        6.8613  DIHED      =       18.4671
+ VDWAALS =       -1.6954  EEL     =      -14.4927  EGB        =      -20.9079
+ 1-4 VDW =        7.9376  1-4 EEL =      -56.1985  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     34      -3.8918E+01     1.2100E+00     7.1218E+00     N11        11
+     34      -5.9335E+01     8.0171E-01     4.1071E+00     C12        12
 
- BOND    =        1.0744  ANGLE   =        7.0420  DIHED      =       15.6339
- VDWAALS =       -1.4990  EEL     =      -14.8031  HBOND      =        0.0000
- 1-4 VDW =       10.4237  1-4 EEL =      -56.7900  RESTRAINT  =        0.0000
+ BOND    =        0.7492  ANGLE   =        6.9107  DIHED      =       18.4705
+ VDWAALS =       -1.7396  EEL     =      -14.4812  EGB        =      -20.9533
+ 1-4 VDW =        7.9066  1-4 EEL =      -56.1977  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     35      -3.8957E+01     4.0441E-01     1.2655E+00     H82        29
+     35      -5.9331E+01     1.6463E+00     7.4132E+00     C12        12
 
- BOND    =        1.0543  ANGLE   =        7.0420  DIHED      =       15.6349
- VDWAALS =       -1.5065  EEL     =      -14.8370  HBOND      =        0.0000
- 1-4 VDW =       10.4131  1-4 EEL =      -56.7576  RESTRAINT  =        0.0000
+ BOND    =        0.8138  ANGLE   =        6.8189  DIHED      =       18.4794
+ VDWAALS =       -1.7803  EEL     =      -14.4297  EGB        =      -20.8816
+ 1-4 VDW =        7.8940  1-4 EEL =      -56.2453  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     36      -3.8976E+01     4.9653E-01     2.0367E+00     C7          7
+     36      -5.9394E+01     5.4685E-01     1.9888E+00     O14        14
 
- BOND    =        1.0578  ANGLE   =        7.0555  DIHED      =       15.6361
- VDWAALS =       -1.5295  EEL     =      -14.8405  HBOND      =        0.0000
- 1-4 VDW =       10.3989  1-4 EEL =      -56.7539  RESTRAINT  =        0.0000
+ BOND    =        0.7612  ANGLE   =        6.8755  DIHED      =       18.4775
+ VDWAALS =       -1.7868  EEL     =      -14.4436  EGB        =      -20.9350
+ 1-4 VDW =        7.8839  1-4 EEL =      -56.2266  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     37      -3.8987E+01     7.6644E-01     4.2305E+00     N11        11
+     37      -5.9425E+01     6.6131E-01     3.1760E+00     C12        12
 
- BOND    =        1.0745  ANGLE   =        7.0394  DIHED      =       15.6370
- VDWAALS =       -1.5502  EEL     =      -14.7990  HBOND      =        0.0000
- 1-4 VDW =       10.3991  1-4 EEL =      -56.7876  RESTRAINT  =        0.0000
+ BOND    =        0.7658  ANGLE   =        6.9139  DIHED      =       18.4798
+ VDWAALS =       -1.8160  EEL     =      -14.4382  EGB        =      -20.9706
+ 1-4 VDW =        7.8628  1-4 EEL =      -56.2229  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     38      -3.8992E+01     9.9033E-01     5.3114E+00     C7          7
+     38      -5.9445E+01     1.0343E+00     4.4637E+00     O14        14
 
- BOND    =        1.0648  ANGLE   =        7.0878  DIHED      =       15.6385
- VDWAALS =       -1.5666  EEL     =      -14.8387  HBOND      =        0.0000
- 1-4 VDW =       10.3768  1-4 EEL =      -56.7546  RESTRAINT  =        0.0000
+ BOND    =        0.7960  ANGLE   =        6.8529  DIHED      =       18.4864
+ VDWAALS =       -1.8482  EEL     =      -14.4011  EGB        =      -20.9269
+ 1-4 VDW =        7.8520  1-4 EEL =      -56.2561  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     39      -3.8995E+01     1.2021E+00     6.6295E+00     N11        11
+     39      -5.9453E+01     1.3505E+00     7.4951E+00     C12        12
 
- BOND    =        1.1130  ANGLE   =        7.0220  DIHED      =       15.6388
- VDWAALS =       -1.5819  EEL     =      -14.7721  HBOND      =        0.0000
- 1-4 VDW =       10.3925  1-4 EEL =      -56.8074  RESTRAINT  =        0.0000
+ BOND    =        0.7929  ANGLE   =        6.9681  DIHED      =       18.4844
+ VDWAALS =       -1.8662  EEL     =      -14.4202  EGB        =      -21.0169
+ 1-4 VDW =        7.8313  1-4 EEL =      -56.2266  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     40      -3.8989E+01     1.5256E+00     7.3582E+00     N11        11
+     40      -5.9460E+01     1.5881E+00     7.1177E+00     C12        12
 
- BOND    =        1.0611  ANGLE   =        7.1396  DIHED      =       15.6399
- VDWAALS =       -1.5937  EEL     =      -14.8316  HBOND      =        0.0000
- 1-4 VDW =       10.3570  1-4 EEL =      -56.7612  RESTRAINT  =        0.0000
+ BOND    =        0.8378  ANGLE   =        6.8371  DIHED      =       18.4929
+ VDWAALS =       -1.8899  EEL     =      -14.3733  EGB        =      -20.9202
+ 1-4 VDW =        7.8296  1-4 EEL =      -56.2744  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     41      -3.9045E+01     3.9522E-01     1.2121E+00     C7          7
+     41      -5.9454E+01     1.9549E+00     1.0606E+01     C12        12
 
- BOND    =        1.0702  ANGLE   =        7.0590  DIHED      =       15.6405
- VDWAALS =       -1.6011  EEL     =      -14.8004  HBOND      =        0.0000
- 1-4 VDW =       10.3710  1-4 EEL =      -56.7838  RESTRAINT  =        0.0000
+ BOND    =        0.8283  ANGLE   =        7.0110  DIHED      =       18.4881
+ VDWAALS =       -1.9053  EEL     =      -14.4035  EGB        =      -21.0494
+ 1-4 VDW =        7.8090  1-4 EEL =      -56.2326  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     42      -3.9060E+01     6.8724E-01     3.3676E+00     N11        11
+     42      -5.9542E+01     4.9801E-01     1.6874E+00     O14        14
 
- BOND    =        1.0621  ANGLE   =        7.0763  DIHED      =       15.6409
- VDWAALS =       -1.6251  EEL     =      -14.7607  HBOND      =        0.0000
- 1-4 VDW =       10.3631  1-4 EEL =      -56.8170  RESTRAINT  =        0.0000
+ BOND    =        0.7866  ANGLE   =        6.9130  DIHED      =       18.4928
+ VDWAALS =       -1.9149  EEL     =      -14.3796  EGB        =      -20.9907
+ 1-4 VDW =        7.8088  1-4 EEL =      -56.2576  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     43      -3.9054E+01     1.1985E+00     5.7702E+00     C7          7
+     43      -5.9577E+01     7.0362E-01     3.0775E+00     O14        14
 
- BOND    =        1.1255  ANGLE   =        7.0461  DIHED      =       15.6451
- VDWAALS =       -1.6440  EEL     =      -14.8091  HBOND      =        0.0000
- 1-4 VDW =       10.3538  1-4 EEL =      -56.7714  RESTRAINT  =        0.0000
+ BOND    =        0.8058  ANGLE   =        6.8837  DIHED      =       18.4991
+ VDWAALS =       -1.9524  EEL     =      -14.3497  EGB        =      -20.9756
+ 1-4 VDW =        7.7915  1-4 EEL =      -56.2798  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     44      -3.9088E+01     3.8825E-01     1.2859E+00     C7          7
+     44      -5.9574E+01     1.4728E+00     8.2417E+00     C12        12
 
- BOND    =        1.0713  ANGLE   =        7.0707  DIHED      =       15.6436
- VDWAALS =       -1.6475  EEL     =      -14.7766  HBOND      =        0.0000
- 1-4 VDW =       10.3514  1-4 EEL =      -56.8009  RESTRAINT  =        0.0000
+ BOND    =        0.8200  ANGLE   =        6.9922  DIHED      =       18.4989
+ VDWAALS =       -1.9788  EEL     =      -14.3585  EGB        =      -21.0582
+ 1-4 VDW =        7.7690  1-4 EEL =      -56.2588  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     45      -3.9102E+01     4.9535E-01     2.4341E+00     N11        11
+     45      -5.9625E+01     4.8874E-01     1.7698E+00     C12        12
 
- BOND    =        1.0755  ANGLE   =        7.0660  DIHED      =       15.6442
- VDWAALS =       -1.6642  EEL     =      -14.7480  HBOND      =        0.0000
- 1-4 VDW =       10.3489  1-4 EEL =      -56.8241  RESTRAINT  =        0.0000
+ BOND    =        0.8012  ANGLE   =        6.9236  DIHED      =       18.5025
+ VDWAALS =       -1.9874  EEL     =      -14.3396  EGB        =      -21.0154
+ 1-4 VDW =        7.7689  1-4 EEL =      -56.2783  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     46      -3.9110E+01     7.1064E-01     4.0045E+00     C7          7
+     46      -5.9650E+01     5.9149E-01     2.5425E+00     O14        14
 
- BOND    =        1.0789  ANGLE   =        7.0847  DIHED      =       15.6465
- VDWAALS =       -1.6809  EEL     =      -14.7756  HBOND      =        0.0000
- 1-4 VDW =       10.3348  1-4 EEL =      -56.7983  RESTRAINT  =        0.0000
+ BOND    =        0.8136  ANGLE   =        6.8975  DIHED      =       18.5072
+ VDWAALS =       -2.0132  EEL     =      -14.3170  EGB        =      -21.0007
+ 1-4 VDW =        7.7582  1-4 EEL =      -56.2958  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     47      -3.9116E+01     8.6695E-01     5.1493E+00     N11        11
+     47      -5.9666E+01     9.2536E-01     5.1393E+00     C12        12
 
- BOND    =        1.0894  ANGLE   =        7.0662  DIHED      =       15.6459
- VDWAALS =       -1.6929  EEL     =      -14.7162  HBOND      =        0.0000
- 1-4 VDW =       10.3416  1-4 EEL =      -56.8497  RESTRAINT  =        0.0000
+ BOND    =        0.8140  ANGLE   =        6.9640  DIHED      =       18.5079
+ VDWAALS =       -2.0347  EEL     =      -14.3204  EGB        =      -21.0552
+ 1-4 VDW =        7.7411  1-4 EEL =      -56.2829  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     48      -3.9119E+01     1.0515E+00     6.4084E+00     C7          7
+     48      -5.9673E+01     1.2115E+00     5.2868E+00     C12        12
 
- BOND    =        1.0893  ANGLE   =        7.0978  DIHED      =       15.6489
- VDWAALS =       -1.7063  EEL     =      -14.7774  HBOND      =        0.0000
- 1-4 VDW =       10.3214  1-4 EEL =      -56.7925  RESTRAINT  =        0.0000
+ BOND    =        0.8495  ANGLE   =        6.8703  DIHED      =       18.5146
+ VDWAALS =       -2.0556  EEL     =      -14.2850  EGB        =      -20.9877
+ 1-4 VDW =        7.7383  1-4 EEL =      -56.3177  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     49      -3.9118E+01     1.2711E+00     7.7312E+00     C7          7
+     49      -5.9679E+01     1.4219E+00     7.8959E+00     C12        12
 
- BOND    =        1.1084  ANGLE   =        7.0700  DIHED      =       15.6474
- VDWAALS =       -1.7177  EEL     =      -14.6857  HBOND      =        0.0000
- 1-4 VDW =       10.3363  1-4 EEL =      -56.8762  RESTRAINT  =        0.0000
+ BOND    =        0.8332  ANGLE   =        6.9984  DIHED      =       18.5115
+ VDWAALS =       -2.0681  EEL     =      -14.3057  EGB        =      -21.0843
+ 1-4 VDW =        7.7229  1-4 EEL =      -56.2874  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     50      -3.9160E+01     3.3439E-01     1.1921E+00     HN13       24
+     50      -5.9675E+01     1.7517E+00     8.1344E+00     C12        12
 
- BOND    =        1.0773  ANGLE   =        7.0757  DIHED      =       15.6490
- VDWAALS =       -1.7231  EEL     =      -14.7275  HBOND      =        0.0000
- 1-4 VDW =       10.3241  1-4 EEL =      -56.8354  RESTRAINT  =        0.0000
+ BOND    =        0.8901  ANGLE   =        6.8546  DIHED      =       18.5205
+ VDWAALS =       -2.0876  EEL     =      -14.2623  EGB        =      -20.9806
+ 1-4 VDW =        7.7224  1-4 EEL =      -56.3319  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     51      -3.9178E+01     4.5699E-01     1.9340E+00     C7          7
+     51      -5.9745E+01     4.5216E-01     1.6398E+00     O14        14
 
- BOND    =        1.0747  ANGLE   =        7.0917  DIHED      =       15.6513
- VDWAALS =       -1.7456  EEL     =      -14.7287  HBOND      =        0.0000
- 1-4 VDW =       10.3123  1-4 EEL =      -56.8342  RESTRAINT  =        0.0000
+ BOND    =        0.8226  ANGLE   =        6.9183  DIHED      =       18.5181
+ VDWAALS =       -2.0925  EEL     =      -14.2752  EGB        =      -21.0371
+ 1-4 VDW =        7.7153  1-4 EEL =      -56.3146  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     52      -1.4468E+01     3.1955E+01     1.8845E+02     N11        11
+     52      -5.4812E+01     1.5962E+01     8.7520E+01     C12        12
 
- BOND    =       20.3544  ANGLE   =       12.3879  DIHED      =       15.6848
- VDWAALS =       -2.2305  EEL     =      -13.5578  HBOND      =        0.0000
- 1-4 VDW =       10.4892  1-4 EEL =      -57.5958  RESTRAINT  =        0.0000
+ BOND    =        5.2967  ANGLE   =        9.0101  DIHED      =       18.6149
+ VDWAALS =       -2.7951  EEL     =      -14.0193  EGB        =      -21.9457
+ 1-4 VDW =        7.3045  1-4 EEL =      -56.2785  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     53      -3.9188E+01     4.3198E-01     1.8375E+00     N11        11
+     53      -5.9787E+01     1.2819E+00     7.2649E+00     C12        12
 
- BOND    =        1.0853  ANGLE   =        7.0715  DIHED      =       15.6515
- VDWAALS =       -1.7555  EEL     =      -14.7060  HBOND      =        0.0000
- 1-4 VDW =       10.3137  1-4 EEL =      -56.8487  RESTRAINT  =        0.0000
+ BOND    =        0.8434  ANGLE   =        7.0009  DIHED      =       18.5249
+ VDWAALS =       -2.1554  EEL     =      -14.2548  EGB        =      -21.1113
+ 1-4 VDW =        7.6774  1-4 EEL =      -56.3125  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     54      -3.9205E+01     4.2842E-01     1.9756E+00     N11        11
+     54      -5.9870E+01     1.2297E+00     7.0049E+00     C12        12
 
- BOND    =        1.0818  ANGLE   =        7.0791  DIHED      =       15.6530
- VDWAALS =       -1.7735  EEL     =      -14.6945  HBOND      =        0.0000
- 1-4 VDW =       10.3064  1-4 EEL =      -56.8575  RESTRAINT  =        0.0000
+ BOND    =        0.8546  ANGLE   =        7.0073  DIHED      =       18.5363
+ VDWAALS =       -2.2274  EEL     =      -14.2124  EGB        =      -21.1357
+ 1-4 VDW =        7.6399  1-4 EEL =      -56.3330  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     55      -3.9329E+01     1.1316E+00     4.6097E+00     C15        16
+     55      -6.0462E+01     1.0125E+00     4.9896E+00     C12        12
 
- BOND    =        1.0698  ANGLE   =        7.1555  DIHED      =       15.6675
- VDWAALS =       -1.9355  EEL     =      -14.5890  HBOND      =        0.0000
- 1-4 VDW =       10.2404  1-4 EEL =      -56.9380  RESTRAINT  =        0.0000
+ BOND    =        1.0039  ANGLE   =        7.1216  DIHED      =       18.6555
+ VDWAALS =       -2.8456  EEL     =      -13.8123  EGB        =      -21.3750
+ 1-4 VDW =        7.3019  1-4 EEL =      -56.5124  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     56      -3.9402E+01     2.6608E+00     1.1541E+01     C15        16
+     56      -6.0733E+01     1.5684E+00     7.4139E+00     N13        13
 
- BOND    =        1.1244  ANGLE   =        7.3029  DIHED      =       15.6947
- VDWAALS =       -2.1802  EEL     =      -14.4216  HBOND      =        0.0000
- 1-4 VDW =       10.1384  1-4 EEL =      -57.0609  RESTRAINT  =        0.0000
+ BOND    =        1.3546  ANGLE   =        7.4218  DIHED      =       18.8498
+ VDWAALS =       -3.5270  EEL     =      -13.2675  EGB        =      -21.7243
+ 1-4 VDW =        6.8808  1-4 EEL =      -56.7207  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     57      -3.9737E+01     1.5736E+00     6.9485E+00     C15        16
+     57      -4.9273E+01     2.0997E+01     1.0720E+02     C17        21
 
- BOND    =        1.1324  ANGLE   =        7.3471  DIHED      =       15.7569
- VDWAALS =       -2.5884  EEL     =      -14.1995  HBOND      =        0.0000
- 1-4 VDW =        9.9761  1-4 EEL =      -57.1617  RESTRAINT  =        0.0000
+ BOND    =       10.4542  ANGLE   =       10.3040  DIHED      =       19.3089
+ VDWAALS =       -4.5090  EEL     =      -11.8796  EGB        =      -21.6602
+ 1-4 VDW =        6.4430  1-4 EEL =      -57.7341  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     58      -3.9882E+01     8.9212E-01     3.4867E+00     C12        12
+     58      -6.0799E+01     6.7467E-01     3.0508E+00     O14        14
 
- BOND    =        1.2324  ANGLE   =        7.4840  DIHED      =       15.8528
- VDWAALS =       -3.0445  EEL     =      -13.9123  HBOND      =        0.0000
- 1-4 VDW =        9.7789  1-4 EEL =      -57.2730  RESTRAINT  =        0.0000
+ BOND    =        1.3346  ANGLE   =        7.4421  DIHED      =       18.8775
+ VDWAALS =       -3.6150  EEL     =      -13.1705  EGB        =      -21.7152
+ 1-4 VDW =        6.8453  1-4 EEL =      -56.7978  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     59      -3.9886E+01     1.2512E+00     4.4218E+00     C17        21
+     59      -6.0820E+01     5.2290E-01     1.9692E+00     C12        12
 
- BOND    =        1.2749  ANGLE   =        7.5074  DIHED      =       15.8590
- VDWAALS =       -3.1026  EEL     =      -13.8475  HBOND      =        0.0000
- 1-4 VDW =        9.7861  1-4 EEL =      -57.3632  RESTRAINT  =        0.0000
+ BOND    =        1.3112  ANGLE   =        7.4444  DIHED      =       18.8799
+ VDWAALS =       -3.6265  EEL     =      -13.1589  EGB        =      -21.6973
+ 1-4 VDW =        6.8495  1-4 EEL =      -56.8220  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     60      -3.9910E+01     4.9656E-01     1.9247E+00     C12        12
+     60      -6.0827E+01     8.0062E-01     4.1118E+00     C12        12
 
- BOND    =        1.2339  ANGLE   =        7.4911  DIHED      =       15.8560
- VDWAALS =       -3.0749  EEL     =      -13.8785  HBOND      =        0.0000
- 1-4 VDW =        9.7826  1-4 EEL =      -57.3200  RESTRAINT  =        0.0000
+ BOND    =        1.2988  ANGLE   =        7.4490  DIHED      =       18.8824
+ VDWAALS =       -3.6383  EEL     =      -13.1469  EGB        =      -21.6788
+ 1-4 VDW =        6.8539  1-4 EEL =      -56.8470  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     61      -3.9926E+01     4.2023E-01     1.4037E+00     H82        29
+     61      -6.0874E+01     5.7898E-01     2.0869E+00     C12        12
 
- BOND    =        1.2177  ANGLE   =        7.5179  DIHED      =       15.8596
- VDWAALS =       -3.0969  EEL     =      -13.8726  HBOND      =        0.0000
- 1-4 VDW =        9.7829  1-4 EEL =      -57.3343  RESTRAINT  =        0.0000
+ BOND    =        1.2200  ANGLE   =        7.5275  DIHED      =       18.8869
+ VDWAALS =       -3.6694  EEL     =      -13.1402  EGB        =      -21.6851
+ 1-4 VDW =        6.8701  1-4 EEL =      -56.8835  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     62      -3.9952E+01     7.5342E-01     2.5989E+00     C19        19
+     62      -6.0909E+01     7.2941E-01     3.0492E+00     C9          9
 
- BOND    =        1.1791  ANGLE   =        7.6259  DIHED      =       15.8733
- VDWAALS =       -3.1766  EEL     =      -13.8506  HBOND      =        0.0000
- 1-4 VDW =        9.7838  1-4 EEL =      -57.3866  RESTRAINT  =        0.0000
+ BOND    =        1.1051  ANGLE   =        7.6929  DIHED      =       18.8961
+ VDWAALS =       -3.7276  EEL     =      -13.1270  EGB        =      -21.6975
+ 1-4 VDW =        6.9015  1-4 EEL =      -56.9527  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     63      -3.9981E+01     9.0479E-01     3.9175E+00     O14        14
+     63      -6.0995E+01     7.9749E-01     3.6199E+00     HN13       24
 
- BOND    =        1.1188  ANGLE   =        7.6950  DIHED      =       15.8945
- VDWAALS =       -3.2485  EEL     =      -13.8294  HBOND      =        0.0000
- 1-4 VDW =        9.8322  1-4 EEL =      -57.4438  RESTRAINT  =        0.0000
+ BOND    =        0.9666  ANGLE   =        7.7110  DIHED      =       18.9239
+ VDWAALS =       -3.7883  EEL     =      -13.1007  EGB        =      -21.7304
+ 1-4 VDW =        6.9755  1-4 EEL =      -56.9528  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     64      -3.9984E+01     6.7577E-01     3.0763E+00     O14        14
+     64      -6.1001E+01     1.0339E+00     3.8947E+00     HN13       24
 
- BOND    =        1.1254  ANGLE   =        7.6772  DIHED      =       15.8895
- VDWAALS =       -3.2322  EEL     =      -13.8343  HBOND      =        0.0000
- 1-4 VDW =        9.8210  1-4 EEL =      -57.4307  RESTRAINT  =        0.0000
+ BOND    =        0.9338  ANGLE   =        7.7255  DIHED      =       18.9335
+ VDWAALS =       -3.8078  EEL     =      -13.0919  EGB        =      -21.7415
+ 1-4 VDW =        7.0000  1-4 EEL =      -56.9524  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     65      -4.0025E+01     5.5982E-01     2.7158E+00     HN13       24
+     65      -6.1121E+01     9.0519E-01     3.2047E+00     C9          9
 
- BOND    =        1.0674  ANGLE   =        7.6567  DIHED      =       15.9031
- VDWAALS =       -3.2670  EEL     =      -13.8222  HBOND      =        0.0000
- 1-4 VDW =        9.8530  1-4 EEL =      -57.4160  RESTRAINT  =        0.0000
+ BOND    =        0.8772  ANGLE   =        7.5986  DIHED      =       18.9616
+ VDWAALS =       -3.8714  EEL     =      -13.0381  EGB        =      -21.7914
+ 1-4 VDW =        7.0522  1-4 EEL =      -56.9098  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     66      -4.0044E+01     9.4478E-01     3.5399E+00     C7          7
+     66      -6.1133E+01     1.2188E+00     4.4834E+00     C7          7
 
- BOND    =        1.0118  ANGLE   =        7.6409  DIHED      =       15.9217
- VDWAALS =       -3.3122  EEL     =      -13.8061  HBOND      =        0.0000
- 1-4 VDW =        9.8954  1-4 EEL =      -57.3960  RESTRAINT  =        0.0000
+ BOND    =        0.8778  ANGLE   =        7.5543  DIHED      =       18.9760
+ VDWAALS =       -3.8985  EEL     =      -13.0141  EGB        =      -21.8144
+ 1-4 VDW =        7.0756  1-4 EEL =      -56.8898  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     67      -4.0117E+01     8.6307E-01     2.9814E+00     C12        12
+     67      -6.1231E+01     1.3654E+00     4.9846E+00     C20        17
 
- BOND    =        0.9206  ANGLE   =        7.5951  DIHED      =       15.9529
- VDWAALS =       -3.3815  EEL     =      -13.7936  HBOND      =        0.0000
- 1-4 VDW =        9.9175  1-4 EEL =      -57.3284  RESTRAINT  =        0.0000
+ BOND    =        0.8370  ANGLE   =        7.3706  DIHED      =       19.0209
+ VDWAALS =       -3.9589  EEL     =      -13.0151  EGB        =      -21.8347
+ 1-4 VDW =        7.1069  1-4 EEL =      -56.7582  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     68      -4.0120E+01     1.0519E+00     3.6089E+00     C7          7
+     68      -6.1239E+01     1.0578E+00     3.1767E+00     C3          3
 
- BOND    =        0.9083  ANGLE   =        7.5867  DIHED      =       15.9614
- VDWAALS =       -3.3987  EEL     =      -13.7903  HBOND      =        0.0000
- 1-4 VDW =        9.9232  1-4 EEL =      -57.3111  RESTRAINT  =        0.0000
+ BOND    =        0.8276  ANGLE   =        7.4010  DIHED      =       19.0103
+ VDWAALS =       -3.9466  EEL     =      -13.0152  EGB        =      -21.8299
+ 1-4 VDW =        7.1002  1-4 EEL =      -56.7862  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     69      -4.0203E+01     7.8684E-01     2.6481E+00     C9          9
+     69      -6.1317E+01     8.3975E-01     2.4257E+00     N13        13
 
- BOND    =        0.9250  ANGLE   =        7.3715  DIHED      =       15.9918
- VDWAALS =       -3.4441  EEL     =      -13.8015  HBOND      =        0.0000
- 1-4 VDW =        9.9364  1-4 EEL =      -57.1816  RESTRAINT  =        0.0000
+ BOND    =        0.8026  ANGLE   =        7.2799  DIHED      =       19.0246
+ VDWAALS =       -3.9546  EEL     =      -13.0275  EGB        =      -21.8934
+ 1-4 VDW =        7.1293  1-4 EEL =      -56.6777  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     70      -4.0203E+01     8.4355E-01     2.8143E+00     C9          9
+     70      -6.1317E+01     8.2642E-01     2.3792E+00     N13        13
 
- BOND    =        0.9290  ANGLE   =        7.3573  DIHED      =       15.9945
- VDWAALS =       -3.4476  EEL     =      -13.8024  HBOND      =        0.0000
- 1-4 VDW =        9.9375  1-4 EEL =      -57.1713  RESTRAINT  =        0.0000
+ BOND    =        0.8021  ANGLE   =        7.2815  DIHED      =       19.0243
+ VDWAALS =       -3.9545  EEL     =      -13.0273  EGB        =      -21.8924
+ 1-4 VDW =        7.1288  1-4 EEL =      -56.6796  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     71      -4.0249E+01     7.1552E-01     2.3445E+00     C16        23
+     71      -6.1368E+01     8.2059E-01     3.0533E+00     C17        21
 
- BOND    =        0.8738  ANGLE   =        7.3073  DIHED      =       16.0303
- VDWAALS =       -3.5052  EEL     =      -13.7725  HBOND      =        0.0000
- 1-4 VDW =        9.9239  1-4 EEL =      -57.1068  RESTRAINT  =        0.0000
+ BOND    =        0.7557  ANGLE   =        7.2191  DIHED      =       19.0219
+ VDWAALS =       -3.9372  EEL     =      -13.0132  EGB        =      -21.8673
+ 1-4 VDW =        7.1355  1-4 EEL =      -56.6826  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     72      -4.0250E+01     6.1384E-01     2.1289E+00     C16        23
+     72      -6.1369E+01     9.0010E-01     3.1981E+00     C17        21
 
- BOND    =        0.8758  ANGLE   =        7.3125  DIHED      =       16.0254
- VDWAALS =       -3.4976  EEL     =      -13.7765  HBOND      =        0.0000
- 1-4 VDW =        9.9257  1-4 EEL =      -57.1155  RESTRAINT  =        0.0000
+ BOND    =        0.7543  ANGLE   =        7.2136  DIHED      =       19.0218
+ VDWAALS =       -3.9353  EEL     =      -13.0117  EGB        =      -21.8647
+ 1-4 VDW =        7.1362  1-4 EEL =      -56.6829  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     73      -4.0273E+01     6.3871E-01     2.4817E+00     C17        21
+     73      -6.1435E+01     7.4708E-01     3.0156E+00     C10        10
 
- BOND    =        0.8666  ANGLE   =        7.2635  DIHED      =       16.0234
- VDWAALS =       -3.4837  EEL     =      -13.7781  HBOND      =        0.0000
- 1-4 VDW =        9.9180  1-4 EEL =      -57.0831  RESTRAINT  =        0.0000
+ BOND    =        0.7626  ANGLE   =        7.1423  DIHED      =       19.0082
+ VDWAALS =       -3.8999  EEL     =      -13.0461  EGB        =      -21.8832
+ 1-4 VDW =        7.1321  1-4 EEL =      -56.6505  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     74      -4.0274E+01     5.8746E-01     2.2920E+00     C17        21
+     74      -6.1439E+01     9.4298E-01     3.5977E+00     C10        10
 
- BOND    =        0.8659  ANGLE   =        7.2667  DIHED      =       16.0235
- VDWAALS =       -3.4848  EEL     =      -13.7780  HBOND      =        0.0000
- 1-4 VDW =        9.9185  1-4 EEL =      -57.0856  RESTRAINT  =        0.0000
+ BOND    =        0.7772  ANGLE   =        7.1223  DIHED      =       19.0045
+ VDWAALS =       -3.8872  EEL     =      -13.0582  EGB        =      -21.8899
+ 1-4 VDW =        7.1308  1-4 EEL =      -56.6390  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     75      -4.0302E+01     4.4577E-01     1.3406E+00     C10        10
+     75      -6.1501E+01     9.5776E-01     3.6368E+00     N11        11
 
- BOND    =        0.8784  ANGLE   =        7.2479  DIHED      =       16.0170
- VDWAALS =       -3.4765  EEL     =      -13.7631  HBOND      =        0.0000
- 1-4 VDW =        9.8999  1-4 EEL =      -57.1058  RESTRAINT  =        0.0000
+ BOND    =        0.7693  ANGLE   =        6.9911  DIHED      =       18.9953
+ VDWAALS =       -3.8275  EEL     =      -13.0509  EGB        =      -21.8278
+ 1-4 VDW =        7.1464  1-4 EEL =      -56.6968  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     76      -4.0307E+01     3.5218E-01     1.1780E+00     H82        29
+     76      -6.1515E+01     7.3781E-01     2.5866E+00     N11        11
 
- BOND    =        0.8812  ANGLE   =        7.2442  DIHED      =       16.0176
- VDWAALS =       -3.4765  EEL     =      -13.7587  HBOND      =        0.0000
- 1-4 VDW =        9.8993  1-4 EEL =      -57.1144  RESTRAINT  =        0.0000
+ BOND    =        0.7609  ANGLE   =        6.9861  DIHED      =       18.9971
+ VDWAALS =       -3.8301  EEL     =      -13.0530  EGB        =      -21.8357
+ 1-4 VDW =        7.1475  1-4 EEL =      -56.6879  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     77      -4.0312E+01     2.9187E-01     1.0124E+00     H82        29
+     77      -6.1528E+01     5.5881E-01     1.7350E+00     H18        42
 
- BOND    =        0.8851  ANGLE   =        7.2396  DIHED      =       16.0181
- VDWAALS =       -3.4763  EEL     =      -13.7541  HBOND      =        0.0000
- 1-4 VDW =        9.8988  1-4 EEL =      -57.1233  RESTRAINT  =        0.0000
+ BOND    =        0.7525  ANGLE   =        6.9816  DIHED      =       18.9997
+ VDWAALS =       -3.8337  EEL     =      -13.0547  EGB        =      -21.8434
+ 1-4 VDW =        7.1494  1-4 EEL =      -56.6794  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     78      -4.0317E+01     2.5492E-01     8.5163E-01     H82        29
+     78      -6.1540E+01     4.5430E-01     1.4458E+00     H18        42
 
- BOND    =        0.8878  ANGLE   =        7.2357  DIHED      =       16.0186
- VDWAALS =       -3.4758  EEL     =      -13.7496  HBOND      =        0.0000
- 1-4 VDW =        9.8987  1-4 EEL =      -57.1324  RESTRAINT  =        0.0000
+ BOND    =        0.7425  ANGLE   =        6.9781  DIHED      =       19.0033
+ VDWAALS =       -3.8386  EEL     =      -13.0551  EGB        =      -21.8489
+ 1-4 VDW =        7.1526  1-4 EEL =      -56.6740  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     79      -4.0322E+01     2.3123E-01     7.1759E-01     H82        29
+     79      -6.1552E+01     3.8708E-01     1.3139E+00     O14        14
 
- BOND    =        0.8881  ANGLE   =        7.2336  DIHED      =       16.0192
- VDWAALS =       -3.4751  EEL     =      -13.7446  HBOND      =        0.0000
- 1-4 VDW =        9.8989  1-4 EEL =      -57.1425  RESTRAINT  =        0.0000
+ BOND    =        0.7320  ANGLE   =        6.9748  DIHED      =       19.0079
+ VDWAALS =       -3.8450  EEL     =      -13.0538  EGB        =      -21.8512
+ 1-4 VDW =        7.1565  1-4 EEL =      -56.6735  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     80      -3.4485E+01     5.6145E+00     1.8827E+01     H82        29
+     80      -5.6943E+01     6.3887E+00     2.2835E+01     H18        42
 
- BOND    =        3.1846  ANGLE   =       10.5162  DIHED      =       16.4655
- VDWAALS =       -3.1812  EEL     =      -12.9081  HBOND      =        0.0000
- 1-4 VDW =       10.3002  1-4 EEL =      -58.8620  RESTRAINT  =        0.0000
+ BOND    =        2.4498  ANGLE   =        9.1009  DIHED      =       20.0162
+ VDWAALS =       -4.3529  EEL     =      -12.8540  EGB        =      -22.0654
+ 1-4 VDW =        7.5438  1-4 EEL =      -56.7813  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     81      -4.0359E+01     3.4372E-01     1.1709E+00     C15        16
+     81      -6.1597E+01     4.4200E-01     1.4368E+00     O14        14
 
- BOND    =        0.9063  ANGLE   =        7.2194  DIHED      =       16.0285
- VDWAALS =       -3.4622  EEL     =      -13.6856  HBOND      =        0.0000
- 1-4 VDW =        9.9044  1-4 EEL =      -57.2694  RESTRAINT  =        0.0000
+ BOND    =        0.7062  ANGLE   =        6.9609  DIHED      =       19.0469
+ VDWAALS =       -3.8989  EEL     =      -13.0364  EGB        =      -21.8694
+ 1-4 VDW =        7.1773  1-4 EEL =      -56.6835  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     82      -4.0350E+01     1.1555E+00     5.3170E+00     C12        12
+     82      -6.1643E+01     5.9948E-01     2.3173E+00     C18        20
 
- BOND    =        0.9441  ANGLE   =        7.2457  DIHED      =       16.0291
- VDWAALS =       -3.4506  EEL     =      -13.6468  HBOND      =        0.0000
- 1-4 VDW =        9.8717  1-4 EEL =      -57.3436  RESTRAINT  =        0.0000
+ BOND    =        0.7398  ANGLE   =        6.9912  DIHED      =       19.0725
+ VDWAALS =       -3.9755  EEL     =      -12.9517  EGB        =      -21.8787
+ 1-4 VDW =        7.1404  1-4 EEL =      -56.7806  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     83      -4.0375E+01     4.8369E-01     2.2587E+00     C12        12
+     83      -6.1643E+01     6.1617E-01     2.3821E+00     C18        20
 
- BOND    =        0.9138  ANGLE   =        7.2217  DIHED      =       16.0282
- VDWAALS =       -3.4571  EEL     =      -13.6682  HBOND      =        0.0000
- 1-4 VDW =        9.8893  1-4 EEL =      -57.3028  RESTRAINT  =        0.0000
+ BOND    =        0.7413  ANGLE   =        6.9926  DIHED      =       19.0732
+ VDWAALS =       -3.9776  EEL     =      -12.9493  EGB        =      -21.8789
+ 1-4 VDW =        7.1394  1-4 EEL =      -56.7833  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     84      -4.0378E+01     6.6811E-01     3.4208E+00     C12        12
+     84      -6.1637E+01     1.3524E+00     6.3693E+00     C7          7
 
- BOND    =        0.9926  ANGLE   =        7.1425  DIHED      =       16.0278
- VDWAALS =       -3.4547  EEL     =      -13.6683  HBOND      =        0.0000
- 1-4 VDW =        9.8843  1-4 EEL =      -57.3021  RESTRAINT  =        0.0000
+ BOND    =        0.8757  ANGLE   =        6.9933  DIHED      =       19.0965
+ VDWAALS =       -4.0498  EEL     =      -12.9050  EGB        =      -21.9352
+ 1-4 VDW =        7.1078  1-4 EEL =      -56.8203  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     85      -4.0384E+01     2.9364E-01     1.1637E+00     HN13       24
+     85      -6.1664E+01     5.4517E-01     2.0788E+00     C7          7
 
- BOND    =        0.9520  ANGLE   =        7.1760  DIHED      =       16.0279
- VDWAALS =       -3.4558  EEL     =      -13.6683  HBOND      =        0.0000
- 1-4 VDW =        9.8865  1-4 EEL =      -57.3024  RESTRAINT  =        0.0000
+ BOND    =        0.7864  ANGLE   =        6.9880  DIHED      =       19.0835
+ VDWAALS =       -4.0120  EEL     =      -12.9285  EGB        =      -21.9052
+ 1-4 VDW =        7.1242  1-4 EEL =      -56.8009  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     86      -4.0390E+01     2.3564E-01     1.0127E+00     HN13       24
+     86      -6.1685E+01     3.6480E-01     1.2645E+00     HN13       24
 
- BOND    =        0.9580  ANGLE   =        7.1602  DIHED      =       16.0283
- VDWAALS =       -3.4578  EEL     =      -13.6650  HBOND      =        0.0000
- 1-4 VDW =        9.8864  1-4 EEL =      -57.3003  RESTRAINT  =        0.0000
+ BOND    =        0.7887  ANGLE   =        7.0061  DIHED      =       19.0906
+ VDWAALS =       -4.0361  EEL     =      -12.9059  EGB        =      -21.9049
+ 1-4 VDW =        7.1048  1-4 EEL =      -56.8281  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     87      -4.0398E+01     3.4005E-01     1.2871E+00     C18        20
+     87      -6.1686E+01     4.3186E-01     1.5115E+00     C20        17
 
- BOND    =        0.9810  ANGLE   =        7.1171  DIHED      =       16.0306
- VDWAALS =       -3.4637  EEL     =      -13.6550  HBOND      =        0.0000
- 1-4 VDW =        9.8864  1-4 EEL =      -57.2940  RESTRAINT  =        0.0000
+ BOND    =        0.7920  ANGLE   =        7.0113  DIHED      =       19.0924
+ VDWAALS =       -4.0417  EEL     =      -12.9006  EGB        =      -21.9049
+ 1-4 VDW =        7.1003  1-4 EEL =      -56.8344  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     88      -4.0401E+01     6.5412E-01     2.9846E+00     C12        12
+     88      -6.1699E+01     4.1211E-01     1.5804E+00     C19        19
 
- BOND    =        0.9910  ANGLE   =        7.0492  DIHED      =       16.0410
- VDWAALS =       -3.4713  EEL     =      -13.6540  HBOND      =        0.0000
- 1-4 VDW =        9.9138  1-4 EEL =      -57.2706  RESTRAINT  =        0.0000
+ BOND    =        0.8431  ANGLE   =        6.9719  DIHED      =       19.0935
+ VDWAALS =       -4.0555  EEL     =      -12.8903  EGB        =      -21.9177
+ 1-4 VDW =        7.0776  1-4 EEL =      -56.8218  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     89      -4.0405E+01     3.4345E-01     1.5228E+00     C12        12
+     89      -6.1699E+01     4.1540E-01     1.5897E+00     C19        19
 
- BOND    =        0.9829  ANGLE   =        7.0767  DIHED      =       16.0363
- VDWAALS =       -3.4681  EEL     =      -13.6544  HBOND      =        0.0000
- 1-4 VDW =        9.9020  1-4 EEL =      -57.2807  RESTRAINT  =        0.0000
+ BOND    =        0.8436  ANGLE   =        6.9716  DIHED      =       19.0935
+ VDWAALS =       -4.0557  EEL     =      -12.8902  EGB        =      -21.9178
+ 1-4 VDW =        7.0774  1-4 EEL =      -56.8217  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     90      -4.0417E+01     2.8144E-01     1.0385E+00     O14        14
+     90      -6.1713E+01     3.8200E-01     1.3693E+00     N13        13
 
- BOND    =        0.9564  ANGLE   =        7.0525  DIHED      =       16.0437
- VDWAALS =       -3.4753  EEL     =      -13.6669  HBOND      =        0.0000
- 1-4 VDW =        9.9352  1-4 EEL =      -57.2631  RESTRAINT  =        0.0000
+ BOND    =        0.8645  ANGLE   =        6.9397  DIHED      =       19.0980
+ VDWAALS =       -4.0643  EEL     =      -12.8762  EGB        =      -21.9291
+ 1-4 VDW =        7.0693  1-4 EEL =      -56.8151  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     91      -4.0423E+01     4.7172E-01     2.0678E+00     O14        14
+     91      -6.1713E+01     4.2411E-01     1.5781E+00     N13        13
 
- BOND    =        0.9261  ANGLE   =        7.0236  DIHED      =       16.0541
- VDWAALS =       -3.4848  EEL     =      -13.6839  HBOND      =        0.0000
- 1-4 VDW =        9.9804  1-4 EEL =      -57.2391  RESTRAINT  =        0.0000
+ BOND    =        0.8680  ANGLE   =        6.9364  DIHED      =       19.0985
+ VDWAALS =       -4.0653  EEL     =      -12.8746  EGB        =      -21.9305
+ 1-4 VDW =        7.0684  1-4 EEL =      -56.8143  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     92      -4.0433E+01     6.7271E-01     2.8121E+00     C20        17
+     92      -6.1730E+01     3.8157E-01     1.8091E+00     C12        12
 
- BOND    =        0.9179  ANGLE   =        6.9473  DIHED      =       16.0762
- VDWAALS =       -3.4923  EEL     =      -13.7063  HBOND      =        0.0000
- 1-4 VDW =       10.0746  1-4 EEL =      -57.2500  RESTRAINT  =        0.0000
+ BOND    =        0.8728  ANGLE   =        6.8867  DIHED      =       19.1116
+ VDWAALS =       -4.0744  EEL     =      -12.8608  EGB        =      -21.9541
+ 1-4 VDW =        7.0819  1-4 EEL =      -56.7937  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     93      -4.0436E+01     4.1954E-01     1.7248E+00     C15        16
+     93      -6.1730E+01     4.4929E-01     2.2249E+00     C12        12
 
- BOND    =        0.9165  ANGLE   =        6.9713  DIHED      =       16.0687
- VDWAALS =       -3.4898  EEL     =      -13.6988  HBOND      =        0.0000
- 1-4 VDW =       10.0430  1-4 EEL =      -57.2464  RESTRAINT  =        0.0000
+ BOND    =        0.8758  ANGLE   =        6.8775  DIHED      =       19.1143
+ VDWAALS =       -4.0762  EEL     =      -12.8581  EGB        =      -21.9588
+ 1-4 VDW =        7.0846  1-4 EEL =      -56.7895  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     94      -4.0449E+01     2.6142E-01     7.4628E-01     C17        21
+     94      -6.1749E+01     4.8953E-01     1.7565E+00     C17        21
 
- BOND    =        0.8962  ANGLE   =        6.9451  DIHED      =       16.0775
- VDWAALS =       -3.4906  EEL     =      -13.7068  HBOND      =        0.0000
- 1-4 VDW =       10.0832  1-4 EEL =      -57.2538  RESTRAINT  =        0.0000
+ BOND    =        0.8687  ANGLE   =        6.8493  DIHED      =       19.1267
+ VDWAALS =       -4.0885  EEL     =      -12.8238  EGB        =      -21.9875
+ 1-4 VDW =        7.1086  1-4 EEL =      -56.8025  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     95      -4.0451E+01     3.3563E-01     9.9647E-01     C9          9
+     95      -6.1749E+01     5.2912E-01     2.0157E+00     C17        21
 
- BOND    =        0.8877  ANGLE   =        6.9315  DIHED      =       16.0830
- VDWAALS =       -3.4911  EEL     =      -13.7115  HBOND      =        0.0000
- 1-4 VDW =       10.1072  1-4 EEL =      -57.2581  RESTRAINT  =        0.0000
+ BOND    =        0.8692  ANGLE   =        6.8473  DIHED      =       19.1278
+ VDWAALS =       -4.0895  EEL     =      -12.8209  EGB        =      -21.9900
+ 1-4 VDW =        7.1106  1-4 EEL =      -56.8035  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     96      -4.0460E+01     3.8788E-01     1.3012E+00     C12        12
+     96      -6.1776E+01     4.2323E-01     1.2815E+00     H16        43
 
- BOND    =        0.8751  ANGLE   =        6.9033  DIHED      =       16.0889
- VDWAALS =       -3.4822  EEL     =      -13.6929  HBOND      =        0.0000
- 1-4 VDW =       10.1398  1-4 EEL =      -57.2919  RESTRAINT  =        0.0000
+ BOND    =        0.8474  ANGLE   =        6.8110  DIHED      =       19.1418
+ VDWAALS =       -4.1055  EEL     =      -12.7911  EGB        =      -21.9740
+ 1-4 VDW =        7.1375  1-4 EEL =      -56.8436  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     97      -4.0460E+01     3.3546E-01     1.0831E+00     C12        12
+     97      -6.1784E+01     6.4370E-01     2.5776E+00     C12        12
 
- BOND    =        0.8758  ANGLE   =        6.9066  DIHED      =       16.0881
- VDWAALS =       -3.4834  EEL     =      -13.6953  HBOND      =        0.0000
- 1-4 VDW =       10.1356  1-4 EEL =      -57.2876  RESTRAINT  =        0.0000
+ BOND    =        0.8388  ANGLE   =        6.7842  DIHED      =       19.1550
+ VDWAALS =       -4.1193  EEL     =      -12.7652  EGB        =      -21.9607
+ 1-4 VDW =        7.1607  1-4 EEL =      -56.8774  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     98      -4.0469E+01     3.6444E-01     1.4085E+00     C7          7
+     98      -6.1813E+01     8.1466E-01     3.3513E+00     C12        12
 
- BOND    =        0.8469  ANGLE   =        6.8679  DIHED      =       16.0947
- VDWAALS =       -3.4670  EEL     =      -13.6885  HBOND      =        0.0000
- 1-4 VDW =       10.1556  1-4 EEL =      -57.2787  RESTRAINT  =        0.0000
+ BOND    =        0.7769  ANGLE   =        6.8038  DIHED      =       19.1940
+ VDWAALS =       -4.1589  EEL     =      -12.7164  EGB        =      -22.0454
+ 1-4 VDW =        7.2271  1-4 EEL =      -56.8940  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-     99      -4.0469E+01     3.7599E-01     1.4838E+00     C7          7
+     99      -6.1814E+01     6.8606E-01     2.4902E+00     C15        16
 
- BOND    =        0.8461  ANGLE   =        6.8667  DIHED      =       16.0949
- VDWAALS =       -3.4665  EEL     =      -13.6883  HBOND      =        0.0000
- 1-4 VDW =       10.1562  1-4 EEL =      -57.2784  RESTRAINT  =        0.0000
+ BOND    =        0.7829  ANGLE   =        6.7992  DIHED      =       19.1880
+ VDWAALS =       -4.1531  EEL     =      -12.7236  EGB        =      -22.0327
+ 1-4 VDW =        7.2172  1-4 EEL =      -56.8918  RESTRAINT  =        0.0000
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-    100      -4.0481E+01     3.1010E-01     1.3779E+00     N11        11
+    100      -6.1850E+01     5.0464E-01     1.7617E+00     C12        12
 
- BOND    =        0.8090  ANGLE   =        6.8246  DIHED      =       16.1020
- VDWAALS =       -3.4441  EEL     =      -13.6747  HBOND      =        0.0000
- 1-4 VDW =       10.1839  1-4 EEL =      -57.2817  RESTRAINT  =        0.0000
+ BOND    =        0.6697  ANGLE   =        6.7683  DIHED      =       19.2272
+ VDWAALS =       -4.1906  EEL     =      -12.6628  EGB        =      -22.0316
+ 1-4 VDW =        7.3038  1-4 EEL =      -56.9342  RESTRAINT  =        0.0000
 
 
   Maximum number of minimization cycles reached.
@@ -934,43 +926,37 @@ Energy minimization:
 
 
    NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
-    100      -4.0481E+01     3.1010E-01     1.3779E+00     N11        11
+    100      -6.1850E+01     5.0464E-01     1.7617E+00     C12        12
 
- BOND    =        0.8090  ANGLE   =        6.8246  DIHED      =       16.1020
- VDWAALS =       -3.4441  EEL     =      -13.6747  HBOND      =        0.0000
- 1-4 VDW =       10.1839  1-4 EEL =      -57.2817  RESTRAINT  =        0.0000
+ BOND    =        0.6697  ANGLE   =        6.7683  DIHED      =       19.2272
+ VDWAALS =       -4.1906  EEL     =      -12.6628  EGB        =      -22.0316
+ 1-4 VDW =        7.3038  1-4 EEL =      -56.9342  RESTRAINT  =        0.0000
 
 --------------------------------------------------------------------------------
    5.  TIMINGS
 --------------------------------------------------------------------------------
 
-|    Read coords time           0.40 ( 1.59% of Total)
-|                Build the list             0.00 (89.05% of List )
-|                Other                      0.00 (10.95% of List )
-|             List time                  0.00 ( 7.01% of Nonbo)
-|                   Short_ene time             0.02 (96.22% of Direc)
-|                   Other                      0.00 ( 3.78% of Direc)
-|                Direct Ewald time          0.02 (90.44% of Ewald)
-|                Force Adjust               0.00 ( 0.21% of Ewald)
-|                Virial junk                0.00 ( 0.90% of Ewald)
-|                Start synchronizatio       0.00 ( 0.74% of Ewald)
-|                Other                      0.00 ( 7.71% of Ewald)
-|             Ewald time                 0.03 (91.95% of Nonbo)
-|             IPS excludes               0.00 ( 0.21% of Nonbo)
-|             Other                      0.00 ( 0.82% of Nonbo)
-|          Nonbond force              0.03 (49.50% of Force)
-|          Bond/Angle/Dihedral        0.03 (48.34% of Force)
-|          Other                      0.00 ( 2.16% of Force)
-|       Force time                 0.06 (100.0% of Runmd)
-|    Runmd Time                 0.06 ( 0.22% of Total)
-|    Other                     24.72 (98.19% of Total)
-| Total time                25.18 (100.0% of ALL  )
+|    Read coords time           0.00 ( 0.36% of Total)
+|    Fast Water setup           0.00 ( 0.01% of Total)
+|                Calc gb radii              0.02 (26.98% of Gen B)
+|                Calc gb diag               0.03 (42.27% of Gen B)
+|                Calc gb off-diag           0.02 (30.57% of Gen B)
+|                Other                      0.00 ( 0.18% of Gen B)
+|             Gen Born time              0.07 (100.0% of Nonbo)
+|             IPS excludes               0.00 ( 0.02% of Nonbo)
+|          Nonbond force              0.07 (82.59% of Force)
+|          Bond/Angle/Dihedral        0.01 (16.97% of Force)
+|          Other                      0.00 ( 0.44% of Force)
+|       Force time                 0.08 (100.0% of Runmd)
+|    Runmd Time                 0.08 (53.67% of Total)
+|    Other                      0.07 (45.96% of Total)
+| Total time                 0.15 (99.75% of ALL  )
 
-| Number of list builds   :          1
+| Number of list builds   :          0
 
-| Highest rstack allocated:        175
-| Highest istack allocated:         35
-|           Job began  at 10:11:12.673  on 07/16/2015
-|           Setup done at 10:11:14.064  on 07/16/2015
-|           Run   done at 10:11:37.852  on 07/16/2015
-|     wallclock() was called    2335 times
+| Highest rstack allocated:          0
+| Highest istack allocated:          0
+|           Job began  at 16:34:11.785  on 02/05/2016
+|           Setup done at 16:34:11.795  on 02/05/2016
+|           Run   done at 16:34:11.935  on 02/05/2016
+|     wallclock() was called    1828 times

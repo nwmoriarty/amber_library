@@ -137,5 +137,4 @@ if __name__=="__main__":
       force = True
   except ValueError:
       force = False
-  run(sys.argv[1])
-
+  run(sys.argv[1], force=force)
