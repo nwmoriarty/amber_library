@@ -83,8 +83,6 @@ if __name__ == '__main__':
         only_code={code}
         only_i=None >& output/amber.{code}.output
     '''
-    
-    print('hello')
     cwd = os.getcwd()
     amber_library = os.path.join(cwd, 'amber_library')
     ligand_codes = get_ligand_codes()

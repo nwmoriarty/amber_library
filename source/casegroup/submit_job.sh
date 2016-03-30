@@ -2,14 +2,20 @@
 #SBATCH -J amberphenix
 #SBATCH -o log/amberphenix.%J.stdout
 #SBATCH -e log/amberphenix.%J.stderr
-#SBATCH -p long
-#SBATCH -N 4
-#SBATCH -t 96:00:00
+#SBATCH -p development
+#SBATCH -N 1
+#SBATCH -t 2:00:00
 
 # require: mpi4py
 # (conda install mpi4py)
 
 cd /project1/dacase-001/haichit/phenix_amber/run_amber_library
+
+# if there is no LIGAND_CODES given, phenix_amber.py will
+# use ligand_codes.dat in ./amber_library/source/casegroup/
+
+# export LIGAND_CODES=./missing_ligands.dat
+export LIGAND_CODES=./amber_library/missing_mol2.dat
 
 # Note: You need to submit this file to cluster in the folder having
 # - ./amber_library
@@ -22,6 +28,4 @@ cd /project1/dacase-001/haichit/phenix_amber/run_amber_library
 # each core run a chunk of ligands
 # 48 cores * 3 days should be sufficient to finish.
 
-# if you want to update ligand code, edit: amber_library/source/casegroup/ligand_codes.dat
-
-mpirun -n 96 python ./amber_library/source/casegroup/phenix_mpi.py
+mpirun -n 24 python ./amber_library/source/casegroup/phenix_mpi.py
