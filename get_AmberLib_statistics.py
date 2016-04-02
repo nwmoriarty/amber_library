@@ -3,8 +3,6 @@ import os, sys
 import glob
 import subprocess
 
-# haichit
-from time import sleep
 
 dirs = '0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t u v w x y z'.split()
 
@@ -32,9 +30,6 @@ def run(only_code=None):
   n_min_pdbs = 0
   n_min_igb_pdbs = 0
   for d in dirs:
-    # haichit
-    print(d)
-    sleep(3)
     pdbs = glob.glob('%s/*final.pdb' %d)
     mol2s = glob.glob('%s/*mol2' %d)
     frcmods = glob.glob('%s/*frcmod' %d)
