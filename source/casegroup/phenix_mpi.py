@@ -53,8 +53,12 @@ def get_ligand_codes():
     -------
     ligands : list of str
     '''
-    ligand_fn = os.environ.get('LIGAND_CODES', amber_library + '/source/casegroup/ligand_codes.dat')
-
+    # ligand_fn = os.environ.get('LIGAND_CODES', amber_library + '/source/casegroup/ligand_codes.dat')
+    ligand_fn = os.environ.get('LIGAND_CODES', '')
+    if not ligand_fn:
+      raise RuntimeError('you must export LIGAND_CODES')
+      sys.exit(1)
+     
     if rank == 0:
         print("using ligand codes from ", ligand_fn)
     

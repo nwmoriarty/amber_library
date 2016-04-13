@@ -1,10 +1,18 @@
-Running: /project1/dacase-001/haichit/amber/amber/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
 
-Running: /project1/dacase-001/haichit/amber/amber/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff2
+Running: /home/haichit/amber_git/amber/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
+Running: /home/haichit/amber_git/amber/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+
+Running: /home/haichit/amber_git/amber/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff2
 Total number of electrons: 224; net charge: 1
 
-Running: /project1/dacase-001/haichit/amber/amber/bin/sqm -O -i sqm.in -o sqm.out
-Error: cannot run "/project1/dacase-001/haichit/amber/amber/bin/sqm -O -i sqm.in -o sqm.out" of bcc() in charge.c properly, exit
+Running: /home/haichit/amber_git/amber/bin/sqm -O -i sqm.in -o sqm.out
 
-SECOND RUN OF Y7N\NCannot open the input file: sqm.pdb in rpdb(), exit
+Running: /home/haichit/amber_git/amber/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /home/haichit/amber_git/amber/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+
+
+SECOND RUN OF Y7N\N
+For atom[30]:O30, the best APS is not zero, bonds involved by this atom are frozen
+
+The frozen atom type can only be 1, 2, 3, 7 (aromatic single), 8 (aromatic double)Running: /home/haichit/amber_git/amber/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+Error: cannot run "/home/haichit/amber_git/amber/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac" in judgebondtype() of antechamber.c properly, exit
 Cannot open file Y7N.mol2 to read in rmol2(), exit

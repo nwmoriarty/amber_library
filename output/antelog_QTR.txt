@@ -1,11 +1,29 @@
 
-Running: /project1/dacase-001/haichit/amber/amber/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff2
+For atom[1]:O, the best APS is not zero, bonds involved by this atom are frozen
+
+Running: /home/haichit/amber_git/amber/bin/bondtype -f ac -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC -j full
+
+Running: /home/haichit/amber_git/amber/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC.AC
+
+Running: /home/haichit/amber_git/amber/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff2
 Total number of electrons: 8; net charge: 0
 
-Running: /project1/dacase-001/haichit/amber/amber/bin/sqm -O -i sqm.in -o sqm.out
-Error: cannot run "/project1/dacase-001/haichit/amber/amber/bin/sqm -O -i sqm.in -o sqm.out" of bcc() in charge.c properly, exit
+Running: /home/haichit/amber_git/amber/bin/sqm -O -i sqm.in -o sqm.out
 
-ERROR in xmin(): Too few atoms.
+Running: /home/haichit/amber_git/amber/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /home/haichit/amber_git/amber/dat/antechamber/BCCPARM.DAT -s 2 -j 4
 
-SECOND RUN OF QTR\NCannot open the input file: sqm.pdb in rpdb(), exit
-Cannot open file QTR.mol2 to read in rmol2(), exit
+
+SECOND RUN OF QTR\N
+For atom[1]:O, the best APS is not zero, bonds involved by this atom are frozen
+
+Running: /home/haichit/amber_git/amber/bin/bondtype -f ac -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC -j full
+
+Running: /home/haichit/amber_git/amber/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC.AC
+
+Running: /home/haichit/amber_git/amber/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff2
+Total number of electrons: 8; net charge: 0
+
+Running: /home/haichit/amber_git/amber/bin/sqm -O -i sqm.in -o sqm.out
+
+Running: /home/haichit/amber_git/amber/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /home/haichit/amber_git/amber/dat/antechamber/BCCPARM.DAT -s 2 -j 4
+
