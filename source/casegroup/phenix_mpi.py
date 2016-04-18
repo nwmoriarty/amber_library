@@ -42,9 +42,8 @@ def run_each_core(ligand_codes, run_elbow_template, amber_library_path):
         subprocess.call(' '.join(run_elbow.split('\n')), shell=True)
 
 def get_codes_for_my_rank(ligand_codes, rank):
-    n_ligands = len(ligand_codes)
-    start, stop = split_range(n_cores, 0, n_ligands)[rank]
-    return ligand_codes[start: stop]
+    import numpy as np
+    return np.array_split(ligand_codes, n_cores)[rank]
 
 def get_ligand_codes():
     '''use env LIGAND_CODES. If not, use ./amber_library/source/casegroup/ligand_codes.dat
@@ -53,7 +52,6 @@ def get_ligand_codes():
     -------
     ligands : list of str
     '''
-    # ligand_fn = os.environ.get('LIGAND_CODES', amber_library + '/source/casegroup/ligand_codes.dat')
     ligand_fn = os.environ.get('LIGAND_CODES', '')
     if not ligand_fn:
       raise RuntimeError('you must export LIGAND_CODES')
@@ -91,5 +89,11 @@ if __name__ == '__main__':
     amber_library = os.path.join(cwd, 'amber_library')
     ligand_codes = get_ligand_codes()
     partial_codes = get_codes_for_my_rank(ligand_codes, rank)
+
+    n_codes = len(partial_codes)
+    x = comm.gather(n_codes, root=0)
+    if rank == 0:
+        print('max n_codes per node = {}'.format(max(x)))
+        print('min n_codes per node = {}'.format(min(x)))
     run_each_core(partial_codes, run_elbow_template, amber_library)
 

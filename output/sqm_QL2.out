@@ -20,18 +20,18 @@ QMMM: SINGLET STATE CALCULATION
 QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 55
 
 | QMMM: *** Selected Hamiltonian *** 
-| QMMM: AM1         
+| QMMM: PM3         
 
 | QMMM: *** Parameter sets in use ***
-| QMMM: N : M.J.S.DEWAR et al. JACS, 107, 3902, (1985)
-| QMMM: C : M.J.S.DEWAR et al. JACS, 107, 3902, (1985)
-| QMMM: H : M.J.S.DEWAR et al. JACS, 107, 3902, (1985)
-| QMMM: F : M.J.S.DEWAR et al. THEOCHEM, 180, 1, (1988)
+| QMMM: N : J.J.P.STEWART, JCC, 10, 209 (1989)
+| QMMM: C : J.J.P.STEWART, JCC, 10, 209 (1989)
+| QMMM: H : J.J.P.STEWART, JCC, 10, 209 (1989)
+| QMMM: F : J.J.P.STEWART, JCC, 10, 209 (1989)
 
 | QMMM: *** SCF convergence criteria ***
-| QMMM: Energy change                :  0.1D-09 kcal/mol
+| QMMM: Energy change                :  0.1D-07 kcal/mol
 | QMMM: Error matrix |FP-PF|         :  0.1D+00 au
-| QMMM: Density matrix change        :  0.5D-06
+| QMMM: Density matrix change        :  0.5D-05
 | QMMM: Maximum number of SCF cycles :     1000
 
 | QMMM: *** Diagonalization Routine Information ***
@@ -42,15 +42,15 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 55
 | QMMM:                              norbs =       98
 | QMMM:    diag iterations used for timing =       15
 | QMMM:
-| QMMM:              Internal diag routine = 0.033125 seconds
-| QMMM:                 Dspev diag routine = 0.047719 seconds
-| QMMM:                Dspevd diag routine = 0.035826 seconds
-| QMMM:                Dspevx diag routine = 0.131023 seconds
-| QMMM:                 Dsyev diag routine = 0.052032 seconds
-| QMMM:                Dsyevd diag routine = 0.042546 seconds
-| QMMM:                Dsyevr diag routine = 0.040640 seconds
+| QMMM:              Internal diag routine = 0.033764 seconds
+| QMMM:                 Dspev diag routine = 0.048265 seconds
+| QMMM:                Dspevd diag routine = 0.036017 seconds
+| QMMM:                Dspevx diag routine = 0.132904 seconds
+| QMMM:                 Dsyev diag routine = 0.052465 seconds
+| QMMM:                Dsyevd diag routine = 0.042762 seconds
+| QMMM:                Dsyevr diag routine = 0.040794 seconds
 | QMMM:
-| QMMM:                Pseudo diag routine = 0.014216 seconds
+| QMMM:                Pseudo diag routine = 0.014273 seconds
 | QMMM:
 | QMMM: Using internal diagonalization routine (diag_routine=1).
 
@@ -93,16 +93,103 @@ QMMM: RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS = 55
   RESULTS
 --------------------------------------------------------------------------------
 
-      iter         sqm energy              rms gradient
-      ----    -------------------    -----------------------
-xmin    10       75.9070 kcal/mol        1.4138 kcal/(mol*A)
-xmin    20       74.8720 kcal/mol        1.0262 kcal/(mol*A)
-xmin    30       73.9414 kcal/mol        1.0768 kcal/(mol*A)
-xmin    40       73.3335 kcal/mol        0.4232 kcal/(mol*A)
+ 
+ Final MO eigenvalues (eV):
+ -42.1604  -40.8255  -37.8283  -35.3877  -34.1548  -31.4235  -31.3999  -29.6489
+ -28.0457  -27.2395  -26.2978  -24.7970  -24.5614  -23.8605  -23.5540  -22.1695
+ -21.4189  -20.3121  -19.9890  -19.5932  -19.0996  -18.9602  -18.4022  -18.3030
+ -17.7827  -17.6631  -17.4296  -17.3798  -17.2531  -17.0397  -16.8644  -16.3044
+ -16.1971  -15.9759  -15.4787  -15.3629  -15.0906  -14.4093  -14.0511  -13.9553
+ -13.5096  -13.2614  -13.2356  -12.8630  -12.6248  -12.5232  -11.9611  -11.7350
+ -11.1613  -11.0535  -10.5520  -10.4672  -10.1847  -10.1574   -9.2559   -1.2746
+  -0.7013   -0.3352   -0.2981    0.2897    0.7087    1.0296    1.2904    1.4623
+   1.5087    1.8025    1.9062    1.9881    2.1146    2.1798    2.2718    2.4526
+   2.5023    2.6205    2.7765    2.8539    2.9504    3.0508    3.1930    3.3825
+   3.4872    3.5332    3.6982    3.8603    4.0155    4.1471    4.1982    4.4322
+   4.5407    4.6467    4.7376    5.2603    5.3352    5.4393    5.8371    6.1983
+   6.6566    6.6597
 
-QMMM: ERROR!
-QMMM: Unable to achieve self consistency to the tolerances specified
-QMMM: No convergence in SCF after   1000 steps.
-QMMM: E =  -0.5672E+06 DeltaE =   0.1229E+00 DeltaP =   0.3747E-01
-QMMM: Smallest DeltaE =   0.2153E-02 DeltaP =   0.1787E-01 Step =     11
+ Heat of formation   =        174.11420928 kcal/mol  (        7.55015868 eV)
+
+ Total SCF energy    =     -84368.56249910 kcal/mol  (    -3658.49540346 eV)
+ Electronic energy   =    -559963.78556378 kcal/mol  (   -24281.85185221 eV)
+ Core-core repulsion =     475595.22306468 kcal/mol  (    20623.35644875 eV)
+ 
+    Atomic Charges for Step       1 :
+  Atom    Element       Mulliken Charge
+     1      N                 -0.149
+     2      C                  0.132
+     3      N                 -0.018
+     4      N                 -0.076
+     5      C                 -0.164
+     6      C                 -0.190
+     7      C                  0.084
+     8      N                  0.112
+     9      N                 -0.064
+    10      C                 -0.203
+    11      N                  0.322
+    12      C                 -0.096
+    13      C                 -0.187
+    14      C                 -0.186
+    15      C                 -0.153
+    16      C                 -0.289
+    17      C                 -0.094
+    18      C                  0.133
+    19      C                  0.067
+    20      C                 -0.036
+    21      H                  0.127
+    22      H                  0.171
+    23      H                  0.072
+    24      H                  0.051
+    25      H                  0.075
+    26      H                  0.143
+    27      H                  0.156
+    28      H                  0.137
+    29      H                  0.152
+    30      H                  0.144
+    31      F                 -0.087
+    32      F                 -0.087
+ Total Mulliken Charge =      -0.000
+ 
+                  X        Y        Z     TOTAL  
+  QM DIPOLE     2.032   -0.086    6.166    6.493
+ 
+ Final Structure
+
+  QMMM: QM Region Cartesian Coordinates (*=link atom) 
+  QMMM: QM_NO.   MM_NO.  ATOM         X         Y         Z
+  QMMM:     1        1      N        0.0000    0.0000    0.0000
+  QMMM:     2        2      C        1.3300    0.0000    0.0000
+  QMMM:     3        3      N        2.5530    0.0090   -2.2590
+  QMMM:     4        4      N        2.0370    0.0000    1.1200
+  QMMM:     5        5      C        1.4330   -0.0000    2.2990
+  QMMM:     6        6      C        0.0260    0.0000    2.3500
+  QMMM:     7        7      C       -0.6850    0.0000    1.1350
+  QMMM:     8        8      N       -2.0700   -0.0000    1.1260
+  QMMM:     9        9      N       -0.3260    0.0000    3.6560
+  QMMM:    10       10      C        0.7470   -0.0010    4.3940
+  QMMM:    11       11      N        1.8570   -0.0000    3.6050
+  QMMM:    12       12      C        3.7720    1.4360    4.1060
+  QMMM:    13       13      C       -4.1290   -0.3620   -2.4790
+  QMMM:    14       14      C       -2.2520   -0.9220   -1.0970
+  QMMM:    15       15      C       -3.9570    0.5580   -0.2710
+  QMMM:    16       16      C        3.2490   -0.0010    4.0650
+  QMMM:    17       17      C        2.0210    0.0000   -1.2540
+  QMMM:    18       18      C       -2.9370   -1.0400   -2.2940
+  QMMM:    19       19      C       -4.6400    0.4360   -1.4700
+  QMMM:    20       20      C       -2.7610   -0.1210   -0.0830
+  QMMM:    21       21      H       -2.7410   -0.7210    1.3070
+  QMMM:    22       22      H        0.6670    0.1850    5.4580
+  QMMM:    23       23      H        4.4040    1.3210    3.2330
+  QMMM:    24       24      H        2.8720    1.9670    3.8210
+  QMMM:    25       25      H        4.0640    1.6690    5.1230
+  QMMM:    26       26      H       -4.7320   -0.0350   -3.3180
+  QMMM:    27       27      H       -1.2880   -1.4080   -1.1900
+  QMMM:    28       28      H       -4.5190    1.2490    0.3460
+  QMMM:    29       29      H        3.6960    0.3610    3.1480
+  QMMM:    30       30      H        3.4340   -0.8700    4.6860
+  QMMM:    31       31      F       -2.4410   -1.8180   -3.2810
+  QMMM:    32       32      F       -5.8030    1.0970   -1.6540
+
+           --------- Calculation Completed ----------
 

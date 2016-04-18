@@ -14,7 +14,13 @@ export opwd=$PWD
 # code is in 2nd colum
 # seq=`cat $source/casegroup/ligand_codes.dat | awk '{print $2}'`
 
-# one column
+if [ -z "$LIGAND_CODES" ]; then
+    echo "must set LIGAND_CODES env"
+    exit 1
+else
+    echo "use ligand codes in $LIGAND_CODES"
+fi
+
 seq=`cat $LIGAND_CODES`
 
 for mycode in $seq; do

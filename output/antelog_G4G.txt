@@ -17,16 +17,8 @@ Running: /project1/dacase-001/haichit/amber/amber/bin/am1bcc -i ANTECHAMBER_AM1B
 
 
 SECOND RUN OF G4G\N
-Warning: the assigned bond types may be wrong, please : 
-(1) double check the structure (the connectivity) and/or 
-(2) adjust atom valence penalty parameters in APS.DAT, and/or 
-(3) increase PSCUTOFF in define.h and recompile bondtype.c
-    Be cautious, use a large value of PSCUTOFF (>100) will significantly increase the computation time
-Running: /project1/dacase-001/haichit/amber/amber/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+For atom[31]:N28, the best APS is not zero, bonds involved by this atom are frozen
 
-Running: /project1/dacase-001/haichit/amber/amber/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff2
-Total number of electrons: 340; net charge: 4
-
-Running: /project1/dacase-001/haichit/amber/amber/bin/sqm -O -i sqm.in -o sqm.out
-Error: cannot run "/project1/dacase-001/haichit/amber/amber/bin/sqm -O -i sqm.in -o sqm.out" of bcc() in charge.c properly, exit
+The frozen atom type can only be 1, 2, 3, 7 (aromatic single), 8 (aromatic double)Running: /project1/dacase-001/haichit/amber/amber/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+Error: cannot run "/project1/dacase-001/haichit/amber/amber/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac" in judgebondtype() of antechamber.c properly, exit
 Cannot open file G4G.mol2 to read in rmol2(), exit
