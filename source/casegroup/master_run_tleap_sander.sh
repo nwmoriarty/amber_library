@@ -8,8 +8,8 @@
 
 # python source code dir
 # export source=/project1/dacase-001/haichit/phenix_amber/run_amber_library/amber_library/source/
-export source=./amber_library/source/
-export opwd=$PWD
+export source=`pwd`/amber_library/source/
+export opwd=`pwd`
 
 # code is in 2nd colum
 # seq=`cat $source/casegroup/ligand_codes.dat | awk '{print $2}'`
