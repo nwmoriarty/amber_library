@@ -6,25 +6,7 @@ comm = MPI.COMM_WORLD
 
 rank, n_cores = comm.rank, comm.size
 
-def split_range(n_chunks, start, stop):
-    '''split a given range to n_chunks
-
-    Examples
-    --------
-    >>> split_range(3, 0, 10)
-    [(0, 3), (3, 6), (6, 10)]
-    '''
-    list_of_tuple = []
-    chunksize = (stop - start) // n_chunks
-    for i in range(n_chunks):
-        if i < n_chunks - 1:
-            _stop = start + (i + 1) * chunksize
-        else:
-            _stop = stop
-        list_of_tuple.append((start + i * chunksize, _stop))
-    return list_of_tuple
-
-def run_each_core(ligand_codes, run_elbow_template, amber_library_path):
+def run_each_core(ligand_codes, amber_library_path, template, tleap=False):
     '''run a chunk of ligand codes in each core
 
     Parameters
@@ -33,13 +15,20 @@ def run_each_core(ligand_codes, run_elbow_template, amber_library_path):
     run_elbow_template : str, bash template to run elbow
     amber_library_path : str, absolute path of amber_library
     '''
-    for code in partial_codes:
-        run_elbow = (run_elbow_template
-                     .strip()
-                     .format(amber_library=amber_library_path, code=code) 
-                    )
+    for code in ligand_codes:
+        if not tleap:
+            run_elbow = (template
+                         .strip()
+                         .format(amber_library=amber_library_path, code=code) 
+                        )
+            subprocess.call(' '.join(run_elbow.split('\n')), shell=True)
+        else:
+            run_elbow = (template
+                         .format(amber_library=amber_library_path, code=code) 
+                        )
+            print(run_elbow)
+            subprocess.call(' '.join(run_elbow.split('\n')), shell=True)
         
-        subprocess.call(' '.join(run_elbow.split('\n')), shell=True)
 
 def get_codes_for_my_rank(ligand_codes, rank):
     import numpy as np
@@ -69,11 +58,7 @@ def get_ligand_codes():
                 ligand_codes.append(line.strip().split('/')[-1])
     return ligand_codes
 
-
-if __name__ == '__main__':
-    '''How? mpirun -n 24 python this_script.py
-    '''
-
+def main_elbow():
     run_elbow_template = '''
     elbow.python
         {amber_library}/source/generate_all_chemical_component_restraint_files.py
@@ -95,5 +80,50 @@ if __name__ == '__main__':
     if rank == 0:
         print('max n_codes per node = {}'.format(max(x)))
         print('min n_codes per node = {}'.format(min(x)))
-    run_each_core(partial_codes, run_elbow_template, amber_library)
+    run_each_core(partial_codes, amber_library, template=run_elbow_template)
 
+def main_tleap():
+    # elbow.python $source/casegroup/run_tleap_sander.py $mycode --force >& ../output/tleap.$mycode.output
+    run_elbow_template = '''
+export source=`pwd`/amber_library/source/;
+export opwd=`pwd`;
+
+echo {code};
+mycode=`elbow.python $source/casegroup/get_code.py output {code}`;
+echo $mycode;
+if [ $mycode ]; then
+    cd {amber_library};
+    elbow.python $source/casegroup/run_tleap_sander.py $mycode --force;
+    cd $opwd;
+fi
+    '''
+    cwd = os.getcwd()
+    amber_library = os.path.join(cwd, 'amber_library')
+    ligand_codes = get_ligand_codes()
+    partial_codes = get_codes_for_my_rank(ligand_codes, rank)
+
+    n_codes = len(partial_codes)
+    x = comm.gather(n_codes, root=0)
+    if rank == 0:
+        print('max n_codes per node = {}'.format(max(x)))
+        print('min n_codes per node = {}'.format(min(x)))
+    run_each_core(partial_codes, amber_library, template=run_elbow_template, tleap=True)
+
+
+if __name__ == '__main__':
+    '''How? 
+        mpirun -n 24 python this_script.py --elbow
+        mpirun -n 24 python this_script.py --tleap
+    '''
+    import sys
+
+    if len(sys.argv) != 2:
+        if rank == 0:
+            raise ValueError("Must follow: python {} --elbow (or --tleap)".format(sys.argv[0]))
+    if sys.argv[-1] == '--elbow':
+        main_elbow()
+    elif sys.argv[-1] == '--tleap':
+        main_tleap()
+    else:
+        if rank == 0:
+            raise ValueError('must using --elbow or --tleap options')
