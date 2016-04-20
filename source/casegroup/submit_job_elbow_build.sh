@@ -28,4 +28,5 @@ export LIGAND_CODES=./amber_library/missing_mol2.dat
 # each core run a chunk of ligands
 # 48 cores * 3 days should be sufficient to finish.
 
-mpirun -n 24 python ./amber_library/source/casegroup/phenix_mpi.py
+# mpirun -n 24 python ./amber_library/source/casegroup/phenix_mpi.py
+mpirun -n 24 python  ./amber_library/source/casegroup/phenix_mpi.py --elbow

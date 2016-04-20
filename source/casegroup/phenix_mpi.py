@@ -16,6 +16,7 @@ def run_each_core(ligand_codes, amber_library_path, template, tleap=False):
     amber_library_path : str, absolute path of amber_library
     '''
     for code in ligand_codes:
+        print('running {}'.format(code))
         if not tleap:
             run_elbow = (template
                          .strip()
@@ -26,7 +27,6 @@ def run_each_core(ligand_codes, amber_library_path, template, tleap=False):
             run_elbow = (template
                          .format(amber_library=amber_library_path, code=code) 
                         )
-            print(run_elbow)
             subprocess.call(' '.join(run_elbow.split('\n')), shell=True)
         
 
@@ -83,7 +83,6 @@ def main_elbow():
     run_each_core(partial_codes, amber_library, template=run_elbow_template)
 
 def main_tleap():
-    # elbow.python $source/casegroup/run_tleap_sander.py $mycode --force >& ../output/tleap.$mycode.output
     run_elbow_template = '''
 export source=`pwd`/amber_library/source/;
 export opwd=`pwd`;
@@ -93,7 +92,7 @@ mycode=`elbow.python $source/casegroup/get_code.py output {code}`;
 echo $mycode;
 if [ $mycode ]; then
     cd {amber_library};
-    elbow.python $source/casegroup/run_tleap_sander.py $mycode --force;
+    elbow.python $source/casegroup/run_tleap_sander.py $mycode --force >& ../output/tleap.$mycode.output;
     cd $opwd;
 fi
     '''
