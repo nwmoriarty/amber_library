@@ -2,9 +2,8 @@
 #                                                                     #
 # This is a copy of the file found in                                 #
 # $PHENIX/modules/elbow/elbow/command_line/                           #
-# as of August 1, 2018. It is placed here for reference to have all  #
-# the code in one place. When running AmberLibary the file from       #
-# $PHENIX is used.                                                    #
+# as of August 1, 2018. It is placed here for reference to have all   #
+# but is now the real version.                                        #
 #                                                                     #
 #######################################################################
 
@@ -24,10 +23,10 @@ from elbow.utilities.chemical_components_utils import \
   get_elbow_molecule_from_chemical_components
 
 from elbow.command_line import builder
-
 from elbow.chemistry.Chemistry import elements
-
 from elbow.utilities import geostd_utils
+
+#from amber_adaptbx.command_line import AmberPrepClass as AmberPrep
 
 from libtbx import easy_run
 import StringIO
@@ -633,7 +632,6 @@ def calculate_amber_files(code,
   mol.WritePDB('4antechamber_%s.pdb' % code)
   mol.WriteTriposMol2('4antechamber_%s.mol2' % code)
   mol.Multiplicitise()
-  print mol.DisplayVeryBrief()
   try: os.remove('sqm.pdb')
   except OSError: pass
 
