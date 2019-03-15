@@ -629,7 +629,8 @@ def calculate_amber_files(code,
   # a very dull problem
   if hasattr(mol, "restraint_class"): del mol.restraint_class
   mol.OptimiseHydrogens()
-  mol.WritePDB('4antechamber_%s.pdb' % code)
+  mol.WritePDB('4antechamber_%s.pdb' % code,
+                pymol_pdb_bond_order=False)
   mol.WriteTriposMol2('4antechamber_%s.mol2' % code)
   mol.Multiplicitise()
   try: os.remove('sqm.pdb')
