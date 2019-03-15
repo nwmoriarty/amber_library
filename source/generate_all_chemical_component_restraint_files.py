@@ -638,7 +638,7 @@ def calculate_amber_files(code,
 
   cmd='antechamber -i 4antechamber_%s.mol2 -fi mol2 -o %s.mol2 -fo mol2 \
     -nc %d -s 2 -pf y -c bcc -at gaff2 \
-    -ek "qm_theory='AM1', scfconv=1.d-10, ndiis_attempts=700,"maxcyc=0"' \
+    -ek "qm_theory=\'AM1\', scfconv=1.d-10, ndiis_attempts=700,maxcyc=0"' \
     %(code, code, mol.charge)
   print cmd
   ero=easy_run.fully_buffered(cmd)
