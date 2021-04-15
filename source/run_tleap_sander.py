@@ -15,6 +15,9 @@ sander_in = """  short minimization
  /
 """
 
+def get_binary(s):
+  return os.path.abspath(os.path.join(os.environ["LIBTBX_BUILD"],'..','conda_base','bin',s))
+
 def files_exist_tleap(code, igb=False):
   for filename in ["%s.prmtop" % code,
                    "%s.rst7" % code,
@@ -30,7 +33,7 @@ def run_tleap(code, igb=False):
   f=file("%s_tleap.in" % code, "wb")
   f.write(inl)
   f.close()
-  cmd='tleap -f {0}_tleap.in'.format(code)
+  cmd = '{0} -f {1}_tleap.in'.format(get_binary('tleap'), code)
   print cmd
   ero = easy_run.fully_buffered(command=cmd)
   std = StringIO.StringIO()
@@ -39,8 +42,9 @@ def run_tleap(code, igb=False):
   for line in std.getvalue().split("\n"):
     outl += "%s\n" % line
   print outl
-  os.remove("%s_tleap.in" % code)
-  os.remove("leap.log")
+  for filename in ["%s_tleap.in" % code, "leap.log"]:
+    if os.path.exists(filename):
+      os.remove(filename)
   return 0
 
 def files_exist_sander(code, igb=False):
@@ -59,7 +63,7 @@ def run_sander(code, igb=False):
   f=file("%s_sander.in" % code, "wb")
   f.write(sin)
   f.close()
-  cmd='sander -O -i {0}_sander.in'.format(code)
+  cmd='{0} -O -i {1}_sander.in'.format(get_binary('sander'), code)
   cmd+=' -p {0}.prmtop'.format(code)
   cmd+=' -c {0}.rst7'.format(code)
   if igb:
@@ -89,7 +93,7 @@ def files_exist_ambpdb(code, igb=False):
   return True
 
 def run_ambpdb(code, igb=False):
-  cmd='ambpdb'
+  cmd=get_binary('ambpdb')
   cmd+=' -p {0}.prmtop'.format(code)
   if igb:
     cmd+=' -c {0}.min_igb.rst7'.format(code)
@@ -127,4 +131,4 @@ def run(only_code, force=False):
       run_ambpdb(only_code, igb=igb)
 
 if __name__=="__main__":
-  run(sys.argv[1])
+  run(*tuple(sys.argv[1:]))
