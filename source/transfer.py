@@ -14,7 +14,7 @@ def main(code):
   print frcmod
   if not os.path.exists(frcmod): assert 0
   #
-  #
+  # validate?
   #
   if not os.path.exists(code[0].lower()): os.mkdir(code[0].lower())
   os.rename(mol2, mol2_relative_path)
